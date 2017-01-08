@@ -1,0 +1,6 @@
+ID, INT, AUTO_INCREMENT PRIMARY KEY
+timestamp, datetime, NOT NULL
+matchnum, INT, NOT NULL
+team, INT, NOT NULL
+
+
