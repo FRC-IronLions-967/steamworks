@@ -8,11 +8,19 @@
 </head>
 <body>
 	<h1>2017 FRC Scouting</h1>
-	<form onsubmit="return false" id="submit">
-		<label for="match">Match</label><br>
-		<input type="text" name="match" id="match"><br>
+
+	<form onsubmit="return false">
+
+		<label for="matchnum">Match</label><br>
+		<input type="number" name="matchnum" id="matchnum" min="1" max = "100"><br>
+
+		<label for="team">Team</label><br>
+		<input type="text" name="team" id="team"><br>
+
 		<input type="submit" name="submit" id="submit">
 	</form>
+
 	<p id="status">Status message here</p>
+	<p><a href="report.php">Match Records</a></p>
 </body>
 </html>
