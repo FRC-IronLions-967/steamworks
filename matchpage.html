@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href="stylesheet.css">
+        <meta name=viewport content="width=device-width">
+    </head>
+    
+<!-- Division Between head and body -->
+
+    <body>
+        <div class="title"><h1>2017 FRC Scouting Site</h1></div>
+        
+        <!-- Match Selection -->
+        
+        <div class = "dropdown">
+            <h2>Match Number:</h2>
+            <!-- <label for="match">Match</label> -->
+            <!-- <input type="number" name="matchnum" id="matchnumber" min="1" max = "3"><br> -->
+            <!-- <button type="button" onclick="dropdown()">Select</button> -->
+            <select id="matchnumber" onchange="dropdown()">
+                <option value="match_number">1</option>
+                <option value="match_number2">2</option>
+                <option value="match_number3">3</option>
+            </select>
+        </div>
+        
+        <!-- Team Selection -->
+        
+        <div class = "dropdown">
+            <h2> Team Number:</h2>
+            <!-- <label for="team">Team</label> -->
+        
+            <select id="teamnumber">
+                <option value="team_number1" id="team_number1"></option>
+                <option value="team_number2" id="team_number2"></option>
+                <option value="team_number3" id="team_number3"></option>
+            </select>
+        </div>
+        
+        <script src="Dropdown.js"></script>    
+            
+        
+    
+    <!-- Hey Jet! You dont need the whole link, just the page name and .html -->
+    
+    <form action="Test.html">
+        <input type="submit" value="Continue" />
+    </form>
+    
+    
+    
+        
+        
+    
+    
+    
+    
+    
+    
+    
+    
+    </body>
+    </html>
