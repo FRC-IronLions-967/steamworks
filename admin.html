@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="admin.js"></script>
+</head>
+<body>
+<h1>Scouting App Settings</h1>
+<p>Under Construction</p>
+<p>Settings applied here will eventually affect the input form and reports.</p>
+
+<form onsubmit="return false">
+		<label for="season">FRC Season</label><br>
+		<input type="number" name="season" id="season" min="2016" max = "2017"><br>
+
+		<label for="eventcode">FRC Event</label><br>
+		<select id="eventcode" name="eventcode">
+                <option value="iacf">Iowa Regional</option>
+                <option value="wila">LaCrosse Regional</option>
+                <option value="mnmi2">North Star Regional</option>
+            </select>
+
+		<input type="submit" name="submit" id="submit">
+</form>
+
+<p>Status indicator to display whether a schedule file exists already</p>
+<p id="status">Status message displayed here.</p>
+</body>
+</html>
