@@ -1,4 +1,0 @@
-ID
-timestamp
-matchnum
-team
