@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel='stylesheet' href="stylesheet.css">
+        <meta name=viewport content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="scheduleData.js"></script>
+        <script src="inputform.js"></script>
+
+    </head>
+    
+<!-- Division Between head and body -->
+
+    <body>
+        
+        <form onsubmit="return false">
+            <div class="title"><h1>2017 FRC Scouting Site</h1></div>
+            
+            <!-- Match Selection -->
+            
+            <label for="matchnum">Match</label><br>
+            <input type="number" name="matchnum" id="matchnum" min="1" max = "100" value="1"><br>
+            
+            <!-- Team Selection -->
+            
+            <div class = "dropdown">
+                <h2> Team Number:</h2>
+                <!-- <label for="team">Team</label> -->
+            
+                <select id="team" name="team">
+                    <option value=100>100</option>
+                    <option value=200>200</option>
+                    <option value=300>300</option>
+                    <option value=400>400</option>
+                    <option value=500>500</option>
+                    <option value=600>600</option>
+                </select>
+            </div>
+         <!-- Autonomous -->
+        <div>
+            <div class="title"><h1>Autonomous</h1></div>  
+            
+            <div class = "dropdown">
+                <label for="baseline">Baseline</label>
+                <input type="checkbox" name="baseline" id="baseline">
+            </div>
+            
+            <div>
+                <label for="highgoal">High Goal</label>
+                <input type="checkbox" name="highgoal" id="highgoal">
+                
+            </div>
+            
+            <div>
+                <label for="lowgoal">Low Goal</label>
+                <input type="checkbox" name="lowgoal" id="lowgoal">
+            </div>
+            
+            <div>
+                <label for="gear">Gear</label>
+                <input type="checkbox" name="gear" id="gear"> 
+            </div>
+            
+            <div>    
+                <label for="autoincap">Incapacitated</label>
+                <input type="checkbox" name="autoincap" id="autoincap">
+            </div>
+        <br>
+        
+            <label for="autopos">Position</label>
+            <select id="autopos" onchange="dropdown()" name="autopos">
+                <option value="Pos">1</option>
+                <option value="Pos2">2</option>
+                <option value="Pos3">3</option>
+            </select>
+            
+        </div>
+        <!-- TeleOp -->
+        <div>
+            
+            <div class="title"><h2>TeleOp</h2></div>
+            <div class = "dropdown">         
+                  Cycles:<br>
+                  <input type="number" name="cycles" value="0" id="cycles">
+                  <br>
+                  
+                    <br>
+                    <label for="highgoaltele">High Goal</label>
+                    <input type="checkbox" name="highgoaltele" id="highgoaltele">
+                
+                    <br>   
+                    <label for="lowgoaltele">Low Goal</label>
+                    <input type="checkbox" name="lowgoaltele" id="lowgoaltele">
+                
+                    <br>
+                    <label for="geartele">Gear</label>
+                    <input type="checkbox" name="geartele" id="geartele">
+                  
+                    <br>
+                    <label for="hopper">Hopper</label>
+                    <input type="checkbox" name="hopper" id="hopper">
+                
+                    <br>
+                    <label for="teleincap">Incapacitated</label>
+                    <input type="checkbox" name="teleincap" id="teleincap">
+                
+                    <br>
+                    <label for="defense">Defense</label>
+                    <input type="checkbox" name="defense" id="defense">
+                
+                
+                    <br>
+                    <label for="climb">Climb</label>
+                    <input type="checkbox" name="climb" id="climb">
+                    
+                    
+            </div>
+        </div>
+      <div class="title"><h3>Comments</h3></div>
+      <div class = "dropdown">         
+         Comments:<br>
+          <input type="text" name="comments" value="" id="comments">
+             </div>
+          
+          
+        <div class="title"><h1>Penalties</h1></div>  
+        <div class = "dropdown">
+            <label for="nopenalties">None</label>
+            <label class="switch">
+            <input type="checkbox" name="nopenalties" id="nopenalties">
+        </div>
+
+        <input type="submit" value="submit" id="submit">
+    </form>
+    <p id="status">Status text here</p>
+</body>
+</html>
