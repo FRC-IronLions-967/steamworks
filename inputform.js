@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	updateTeams(scheduleData, $('#matchnum').val())
+	updateNickname(teamData, $('#team').val());
 	$("#submit").click(
 		function(){
 			//if (validate data function) then call AJAX
@@ -14,6 +15,12 @@ $(document).ready(function(){
 	$("#matchnum").change(
 		function(){
 			updateTeams(scheduleData, $('#matchnum').val())
+			updateNickname(teamData, $('#team').val());
+		}
+	); //close matchnum change
+	$("#team").change(
+		function(){
+			updateNickname(teamData, $('#team').val());
 		}
 	); //close team change
 }); //close document ready
@@ -125,4 +132,12 @@ function updateTeams(arr, matchnum){
 		choices += '<option value="'+team+'">'+team+'</option>\n';
 	}
 	document.getElementById('team').innerHTML = choices;
+}
+
+function updateNickname(arr, teamnum){
+	for (i = 0; i < arr.length; i++){
+		if (arr[i]['team_number']==teamnum){
+			$('#nickname').html(arr[i]['nickname']);
+		}
+	}
 }
