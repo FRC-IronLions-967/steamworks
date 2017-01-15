@@ -39,12 +39,8 @@ function validateForm(){
 }
 
 function ajaxInsert(){
-	console.log('ajaxInsert called');
-	$('#status').html('Connecting to database...');
 	//jQuery AJAX call to insert_match_record.php
-	//variables
-	//create postData string from HTML fields; hard code testing example below
-	//maybe loop through a jQuery class selector to generate the string
+	$('#status').html('Connecting to database...');
 	var matchnum = parseInt($('#matchnum').val());
 	var team = $('#team').val();
 	var baseline = parseInt(document.getElementById('baseline').checked | 0);
@@ -82,7 +78,6 @@ function ajaxInsert(){
 		'&climb='+climb+
 		'&comments='+comments+
 		'&nopenalties='+nopenalties;
-	console.log(postData);
 
     $.ajax({
 	    url : "insert_match_record.php",
