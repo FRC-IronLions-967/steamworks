@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel='stylesheet' href="stylesheet.css">
+        <!-- <link rel='stylesheet' href="stylesheet.css"> -->
+        <link rel='stylesheet' href="w3.css">
+        <link rel='stylesheet' href="w3-theme-red.css">
+        <link rel='stylesheet' href="style.css">
         <meta name=viewport content="width=device-width">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -13,33 +16,35 @@
     
 <!-- Division Between head and body -->
 
-    <body>
+    <body class="w3-theme-d4">
         
         <form onsubmit="return false">
-            <div class="title"><h1>2017 FRC Scouting Site</h1></div>
+            <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-center  "><h1>2017 FRC Scouting Site</h1></div>
             
             <!-- Match Selection -->
-            
-            <label for="matchnum">Match</label><br>
-            <input type="number" name="matchnum" id="matchnum" min="1" max = "100" value="1"><br>
-            
-            <!-- Team Selection -->
-            
-            <div class = "dropdown">
-                <h2> Team Number:</h2>
-                <!-- <label for="team">Team</label> -->
-            
-                <select id="team" name="team">
-                    <option value=100>100</option>
-                    <option value=200>200</option>
-                    <option value=300>300</option>
-                    <option value=400>400</option>
-                    <option value=500>500</option>
-                    <option value=600>600</option>
-                </select><span id="nickname" style="margin-left: 10px;">[Team Nickname]</span>   
+            <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">   
+                <label for="matchnum">Match</label><br>
+                <input type="number" name="matchnum" id="matchnum" min="1" max = "100" value="1"><br>
+                
+                <!-- Team Selection -->
+                
+                <div class = "dropdown">
+                    <h2> Team Number:</h2>
+                    <!-- <label for="team">Team</label> -->
+                
+                    <select id="team" name="team">
+                        <option value=100>100</option>
+                        <option value=200>200</option>
+                        <option value=300>300</option>
+                        <option value=400>400</option>
+                        <option value=500>500</option>
+                        <option value=600>600</option>
+                    </select><span id="nickname" style="margin-left: 10px;">team nickname</span>   
+                </div>
             </div>
+            
          <!-- Autonomous -->
-        <div>
+        <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
             <div class="title"><h1>Autonomous</h1></div>  
             
             <div class = "dropdown">
@@ -70,7 +75,7 @@
         <br>
         
             <label for="autopos">Position</label>
-            <select id="autopos" onchange="dropdown()" name="autopos">
+            <select id="autopos" name="autopos">
                 <option value="Pos">1</option>
                 <option value="Pos2">2</option>
                 <option value="Pos3">3</option>
@@ -78,7 +83,7 @@
             
         </div>
         <!-- TeleOp -->
-        <div>
+        <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
             
             <div class="title"><h2>TeleOp</h2></div>
             <div class = "dropdown">         
@@ -112,28 +117,36 @@
                 
                 
                     <br>
-                    <label for="climb">Climb</label>
-                    <input type="checkbox" name="climb" id="climb">
+                    <label for="climba">Climb Attempt</label>
+                    <input type="checkbox" name="climba" id="climba">
+                    
+                    
+                    <br>
+                    <label for="climbs">Climb Success</label>
+                    <input type="checkbox" name="climbs" id="climbs">
                     
                     
             </div>
         </div>
-      <div class="title"><h3>Comments</h3></div>
-      <div class = "dropdown">         
-         Comments:<br>
-          <input type="text" name="comments" value="" id="comments">
-             </div>
+      <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white "><h3>Comment Section</h3>
+         
+             <!--Comments:<br>
+              <input type="text" name="comments" value="" id="comments">-->
+              <textarea placeholder="Insert Comments Here"></textarea>
+
+      </div>
           
           
-        <div class="title"><h1>Penalties</h1></div>  
-        <div class = "dropdown">
+        <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
+            <h1>Penalties</h1>  
             <label for="nopenalties">None</label>
             <label class="switch">
             <input type="checkbox" name="nopenalties" id="nopenalties">
         </div>
 
-        <input type="submit" value="submit" id="submit">
+            <input type="submit" value="submit" id="submit" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-text-red w3-round-large  w3-text-white">
+
     </form>
-    <p id="status">Status text here</p>
+    <p id="status" class="">Status text here</p>
 </body>
 </html>

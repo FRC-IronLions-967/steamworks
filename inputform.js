@@ -56,7 +56,8 @@ function ajaxInsert(){
 	var hopper = parseInt(document.getElementById('hopper').checked | 0);
 	var teleincap = parseInt(document.getElementById('teleincap').checked | 0);
 	var defense = parseInt(document.getElementById('defense').checked | 0);
-	var climb = parseInt(document.getElementById('climb').checked | 0);
+	var climba = parseInt(document.getElementById('climba').checked | 0);
+	var climbs = parseInt(document.getElementById('climbs').checked | 0);
 	var comments = $('#comments').val();
 	var nopenalties = $('#nopenalties').val();
 
@@ -75,7 +76,8 @@ function ajaxInsert(){
 		'&hopper='+hopper+
 		'&teleincap='+teleincap+
 		'&defense='+defense+
-		'&climb='+climb+
+		'&climba='+climba+
+		'&climbs='+climbs+
 		'&comments='+comments+
 		'&nopenalties='+nopenalties;
 

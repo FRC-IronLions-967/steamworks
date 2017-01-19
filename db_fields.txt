@@ -15,6 +15,7 @@ geartele
 hopper
 teleincap
 defense
-climb
+climba
+climbs
 comments
 nopenalties

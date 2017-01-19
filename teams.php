@@ -6,7 +6,12 @@
 //Start on character 15, because the JS file includes "var teamData = " that we wish to ignore here.
 $string =substr(file_get_contents("teamData.js"),15);
 $teams = json_decode($string, true);
-//sort array here
+
+//Sort array by team_number
+foreach ($teams as $key => $row) {
+    $teamnumber[$key]  = $row['team_number'];
+}
+array_multisort($teamnumber, SORT_ASC, $teams);
 
 foreach($teams as $t){
 	$teamnum = $t['team_number'];
