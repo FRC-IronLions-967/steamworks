@@ -19,7 +19,7 @@
     <body class="w3-theme-d4">
         
         <form onsubmit="return false">
-            <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-center  "><h1>2017 FRC Scouting Site.</h1></div>
+            <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-center  "><h1>2017 FRC Scouting Site</h1></div>
             
             <!-- Match Selection -->
             <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">   
@@ -41,6 +41,11 @@
                         <option value=600>600</option>
                     </select><span id="nickname" style="margin-left: 10px;">team nickname</span>   
                 </div>
+
+                    <h3> Scout Name:</h3>
+                <input type="text" name="name" value="" id="name">
+              </div>
+
             </div>
             
          <!-- Autonomous -->
@@ -131,8 +136,8 @@
                   <br>
                 
                     <br>
-                    <label for="geartele">Gear</label>
-                    <input type="checkbox" name="geartele" id="geartele">
+                    <label for="gearmade">Gears</label><br>
+                    <input type="number" name="gearmade" value="0" id="gearmade"> <br>
                   
                     <br>
                     <label for="hopper">Hopper</label>
@@ -165,6 +170,14 @@
           <label for="nopenalties">None</label>
           <label class="switch">
           <input type="checkbox" name="nopenalties" id="nopenalties">
+          <br>
+          <label for="technical">Technical</label>
+          <br>
+          <input type="number" name="technical" value="0" id="technical">
+          <br>
+          <label for="nontechnical">Non-Technical</label>
+          <br>
+          <input type="number" name="nontechnical" value="0" id="nontechnical">
       </div>
 
       <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white "><h3>Comment Section</h3>
@@ -174,13 +187,18 @@
               <textarea placeholder="Insert Comments Here"></textarea>
 
       </div>
-          
+<button onclick="myFunction()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    window.location.href = 'http://www.nemoquiz.com/steamworks/menu.html';
           
         
 
             <input type="submit" value="submit" id="submit" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-text-red w3-round-large  w3-text-white">
-
-    </form>
+           </form>
     <p id="status" class="">Status text here</p>
 </body>
 </html>
