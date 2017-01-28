@@ -2,9 +2,14 @@ ID
 timestamp
 matchnum
 team
+name
 baseline
 highgoal
+highgoalmissed
+highgoalmade
 lowgoal
+lowgoalmissed
+lowgoalmade
 gear
 autoincap
 autopos
