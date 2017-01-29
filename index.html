@@ -42,6 +42,9 @@
                     </select><span id="nickname" style="margin-left: 10px;">team nickname</span>   
                 </div>
 
+               <label for="pracitce">Practice?</label>
+               <input type="checkbox" name="practice" id="practice"
+               <br>    
                     <h3> Scout Name:</h3>
                 <input type="text" name="name" value="" id="name">
               </div>
@@ -57,11 +60,6 @@
                 <input type="checkbox" name="baseline" id="baseline">
             </div>
             
-            <div>
-                <label for="highgoal">High Goal</label>
-                <input type="checkbox" name="highgoal" id="highgoal">   
-            </div>
-
             High Goal Made (estimated):<br>
                   <input type="number" name="highgoalmadeauto" value="0" id="highgoalmadeauto">
                   <br>
@@ -70,11 +68,6 @@
                   <input type="number" name="highgoalmissedauto" value="0" id="highgoalmissedauto">
                   <br>
             
-            <div>
-                <label for="lowgoal">Low Goal</label>
-                <input type="checkbox" name="lowgoal" id="lowgoal">
-            </div>
-
             Low Goal Made (estimated):<br>
                   <input type="number" name="lowgoalmadeauto" value="0" id="lowgoalmadeauto">
                   <br>
@@ -84,8 +77,12 @@
                   <br>
             
             <div>
-                <label for="gear">Gear</label>
-                <input type="checkbox" name="gear" id="gear"> 
+                 <label for="gearattempted">Gear Attempted</label><br>
+                    <input type="number" name="gearattempted" value="0" id="gearattempted">
+                    <br>
+
+                    <label for="gearmade">Gear Made</label><br>
+                    <input type="number" name="gearmade" value="0" id="gearmade"> <br>
             </div>
             
             <div>    
@@ -111,9 +108,6 @@
                   <input type="number" name="cycles" value="0" id="cycles">
                   <br>
                   
-                    <br>
-                    <label for="highgoaltele">High Goal</label>
-                    <input type="checkbox" name="highgoaltele" id="highgoaltele"> <br>
 
                     High Goal Made (estimated):<br>
                   <input type="number" name="highgoalmade" value="0" id="highgoalmade">
@@ -123,9 +117,6 @@
                   <input type="number" name="highgoalmissed" value="0" id="highgoalmissed">
                   <br>
                 
-                    <br>   
-                    <label for="lowgoaltele">Low Goal</label>
-                    <input type="checkbox" name="lowgoaltele" id="lowgoaltele"> <br>
 
                     Low Goal Made (estimated):<br>
                   <input type="number" name="lowgoalmade" value="0" id="lowgoalmade">
@@ -135,9 +126,12 @@
                   <input type="number" name="lowgoalmissed" value="0" id="lowgoalmissed">
                   <br>
                 
+                    <label for="gearsattempted">Gears Attempted</label><br>
+                    <input type="number" name="gearsattempted" value="0" id="gearsattempted">
                     <br>
-                    <label for="gearmade">Gears</label><br>
-                    <input type="number" name="gearmade" value="0" id="gearmade"> <br>
+
+                    <label for="gearsmade">Gears Made</label><br>
+                    <input type="number" name="gearsmade" value="0" id="gearsmade"> <br>
                   
                     <br>
                     <label for="hopper">Hopper</label>
@@ -167,9 +161,6 @@
 
       <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
           <h1>Penalties</h1>  
-          <label for="nopenalties">None</label>
-          <label class="switch">
-          <input type="checkbox" name="nopenalties" id="nopenalties">
           <br>
           <label for="technical">Technical</label>
           <br>
