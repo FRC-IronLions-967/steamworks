@@ -1,195 +1,179 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- <link rel='stylesheet' href="stylesheet.css"> -->
-        <link rel='stylesheet' href="w3.css">
-        <link rel='stylesheet' href="w3-theme-red.css">
-        <link rel='stylesheet' href="style.css">
-        <meta name=viewport content="width=device-width">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="scheduleData.js"></script>
-        <script src="teamData.js"></script>
-        <script src="inputform.js"></script>
+<head>
+  <!-- <link rel='stylesheet' href="stylesheet.css"> -->
+  <link rel='stylesheet' href="w3.css">
+  <link rel='stylesheet' href="w3-theme-red.css">
+  <link rel='stylesheet' href="style.css">
+  <meta name=viewport content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="scheduleData.js"></script>
+  <script src="teamData.js"></script>
+  <script src="inputform.js"></script>
+</head>
 
-    </head>
-    
 <!-- Division Between head and body -->
+<body class="w3-theme-d4">      
 
-    <body class="w3-theme-d4">
-        
-        <form onsubmit="return false">
-            <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-center  "><h1>2017 FRC Scouting Site</h1></div>
+<form onsubmit="return false">
+
+  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-center  "><h1>2017 FRC Scouting Site</h1></div>
+    
+  <!-- Match Selection -->
+  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">   
+    <label for="matchnum">Match</label><br>
+    <input type="number" name="matchnum" id="matchnum" min="1" max = "100" value="1"><br>
+      
+    <!-- Team Selection -->
+    <div class = "dropdown">
+      <h2>Team Number:</h2>
+      <select id="team" name="team">
+        <option value=100>100</option>
+        <option value=200>200</option>
+        <option value=300>300</option>
+        <option value=400>400</option>
+        <option value=500>500</option>
+        <option value=600>600</option>
+      </select><span id="nickname" style="margin-left: 10px;">team nickname</span>   
+    </div>
+
+    <label for="practice">Practice?</label>
+    <input type="checkbox" name="practice" id="practice"><br>
+  
+    <h3> Scout Name:</h3>
+    <input type="text" name="scout_name" value="" id="scout_name">
+  </div>
             
-            <!-- Match Selection -->
-            <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">   
-                <label for="matchnum">Match</label><br>
-                <input type="number" name="matchnum" id="matchnum" min="1" max = "100" value="1"><br>
-                
-                <!-- Team Selection -->
-                
-                <div class = "dropdown">
-                    <h2> Team Number:</h2>
-                    <!-- <label for="team">Team</label> -->
-                
-                    <select id="team" name="team">
-                        <option value=100>100</option>
-                        <option value=200>200</option>
-                        <option value=300>300</option>
-                        <option value=400>400</option>
-                        <option value=500>500</option>
-                        <option value=600>600</option>
-                    </select><span id="nickname" style="margin-left: 10px;">team nickname</span>   
-                </div>
+  <!-- Autonomous -->
+  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
+    <div class="title"><h1>Autonomous</h1></div>  
+    
+    <div class = "dropdown">
+      <label for="baseline">Baseline</label>
+      <input type="checkbox" name="baseline" id="baseline">
+    </div>
+    
+    High Goal Made (estimated):<br>
+    <input type="number" name="auto_high_made" value="0" id="auto_high_made">
+    <br>
 
-               <label for="pracitce">Practice?</label>
-               <input type="checkbox" name="practice" id="practice"
-               <br>    
-                    <h3> Scout Name:</h3>
-                <input type="text" name="name" value="" id="name">
-              </div>
+    High Goal Missed (estimated):<br>
+    <input type="number" name="auto_high_miss" value="0" id="auto_high_miss">
+    <br>
+    
+    Low Goal Made (estimated):<br>
+    <input type="number" name="auto_low_made" value="0" id="auto_low_made">
+    <br>
 
-            </div>
-            
-         <!-- Autonomous -->
-        <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
-            <div class="title"><h1>Autonomous</h1></div>  
-            
-            <div class = "dropdown">
-                <label for="baseline">Baseline</label>
-                <input type="checkbox" name="baseline" id="baseline">
-            </div>
-            
-            High Goal Made (estimated):<br>
-                  <input type="number" name="highgoalmadeauto" value="0" id="highgoalmadeauto">
-                  <br>
-
-            High Goal Missed (estimated):<br>
-                  <input type="number" name="highgoalmissedauto" value="0" id="highgoalmissedauto">
-                  <br>
-            
-            Low Goal Made (estimated):<br>
-                  <input type="number" name="lowgoalmadeauto" value="0" id="lowgoalmadeauto">
-                  <br>
-
-                  Low Goal Missed (estimated):<br>
-                  <input type="number" name="lowgoalmissedauto" value="0" id="lowgoalmissedauto">
-                  <br>
-            
-            <div>
-                 <label for="gearattempted">Gear Attempted</label><br>
-                    <input type="number" name="gearattempted" value="0" id="gearattempted">
-                    <br>
-
-                    <label for="gearmade">Gear Made</label><br>
-                    <input type="number" name="gearmade" value="0" id="gearmade"> <br>
-            </div>
-            
-            <div>    
-                <label for="autoincap">Incapacitated</label>
-                <input type="checkbox" name="autoincap" id="autoincap">
-            </div>
-        <br>
-        
-            <label for="autopos">Position</label>
-            <select id="autopos" name="autopos">
-                <option value="Pos">1</option>
-                <option value="Pos2">2</option>
-                <option value="Pos3">3</option>
-            </select>
-            
-        </div>
-        <!-- TeleOp -->
-        <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
-            
-            <div class="title"><h2>TeleOp</h2></div>
-            <div class = "dropdown">         
-                  Cycles:<br>
-                  <input type="number" name="cycles" value="0" id="cycles">
-                  <br>
-                  
-
-                    High Goal Made (estimated):<br>
-                  <input type="number" name="highgoalmade" value="0" id="highgoalmade">
-                  <br>
-
-                  High Goal Missed (estimated):<br>
-                  <input type="number" name="highgoalmissed" value="0" id="highgoalmissed">
-                  <br>
-                
-
-                    Low Goal Made (estimated):<br>
-                  <input type="number" name="lowgoalmade" value="0" id="lowgoalmade">
-                  <br>
-
-                  Low Goal Missed (estimated):<br>
-                  <input type="number" name="lowgoalmissed" value="0" id="lowgoalmissed">
-                  <br>
-                
-                    <label for="gearsattempted">Gears Attempted</label><br>
-                    <input type="number" name="gearsattempted" value="0" id="gearsattempted">
-                    <br>
-
-                    <label for="gearsmade">Gears Made</label><br>
-                    <input type="number" name="gearsmade" value="0" id="gearsmade"> <br>
-                  
-                    <br>
-                    <label for="hopper">Hopper</label>
-                    <input type="checkbox" name="hopper" id="hopper">
-                
-                    <br>
-                    <label for="teleincap">Incapacitated</label>
-                    <input type="checkbox" name="teleincap" id="teleincap">
-                
-                    <br>
-                    <label for="defense">Defense</label>
-                    <input type="checkbox" name="defense" id="defense">
-                
-                
-                    <br>
-                    <label for="climba">Climb Attempt</label>
-                    <input type="checkbox" name="climba" id="climba">
-                    
-                    
-                    <br>
-                    <label for="climbs">Climb Success</label>
-                    <input type="checkbox" name="climbs" id="climbs">
-                    
-                    
-            </div>
-        </div>
-
-      <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
-          <h1>Penalties</h1>  
-          <br>
-          <label for="technical">Technical</label>
-          <br>
-          <input type="number" name="technical" value="0" id="technical">
-          <br>
-          <label for="nontechnical">Non-Technical</label>
-          <br>
-          <input type="number" name="nontechnical" value="0" id="nontechnical">
-      </div>
-
-      <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white "><h3>Comment Section</h3>
-         
-             <!--Comments:<br>
-              <input type="text" name="comments" value="" id="comments">-->
-              <textarea placeholder="Insert Comments Here"></textarea>
-
-      </div>
-<button onclick="myFunction()">Submit</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-    window.location.href = 'http://www.nemoquiz.com/steamworks/menu.html';
+    Low Goal Missed (estimated):<br>
+    <input type="number" name="auto_low_miss" value="0" id="auto_low_miss">
+    <br>
+    
+    <div>
+          <label for="auto_gear_made">Gear Made</label><br>
+          <input type="checkbox" name="auto_gear_made" id="auto_gear_made"><br>
           
+          <label for="auto_gear_miss">Gear Missed</label><br>
+          <input type="checkbox" name="auto_gear_miss" id="auto_gear_miss"><br>
+    </div>
+            
+    <div>    
+        <label for="auto_incap">Incapacitated</label>
+        <input type="checkbox" name="auto_incap" id="auto_incap">
+    </div>
+    <br>
         
+    <label for="auto_pos">Position</label>
+    <select id="auto_pos" name="auto_pos">
+        <option value="Pos1">1</option>
+        <option value="Pos2">2</option>
+        <option value="Pos3">3</option>
+    </select>
+            
+</div>
 
-            <input type="submit" value="submit" id="submit" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-text-red w3-round-large  w3-text-white">
-           </form>
-    <p id="status" class="">Status text here</p>
+  <!-- TeleOp -->
+  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
+            
+    <div class="title"><h2>TeleOp</h2></div>
+    
+    <div class = "dropdown">         
+      Cycles:<br>
+      <input type="number" name="cycles" value="0" id="cycles">
+      <br>
+
+      High Goal Made (estimated):<br>
+      <input type="number" name="tele_high_made" value="0" id="tele_high_made">
+      <br>
+
+      High Goal Missed (estimated):<br>
+      <input type="number" name="tele_high_miss" value="0" id="tele_high_miss">
+      <br>
+    
+      Low Goal Made (estimated):<br>
+      <input type="number" name="tele_low_made" value="0" id="tele_low_made">
+      <br>
+
+      Low Goal Missed (estimated):<br>
+      <input type="number" name="tele_low_miss" value="0" id="tele_low_miss">
+      <br>
+    
+      <label for="tele_gear_made">Gears Made</label><br>
+      <input type="number" name="tele_gear_made" value="0" id="tele_gear_made"> <br>
+
+      <label for="tele_gear_miss">Gears Missed</label><br>
+      <input type="number" name="tele_gear_miss" value="0" id="tele_gear_miss">
+      <br>
+    
+      <br>
+      <label for="hopper">Hopper</label>
+      <input type="number" name="hopper" id="hopper">
+
+      <br>
+      <label for="tele_incap">Incapacitated</label>
+      <input type="checkbox" name="tele_incap" id="tele_incap">
+
+      <br>
+      <label for="defense">Defense</label>
+      <input type="checkbox" name="defense" id="defense">
+      <br>
+
+      <label for="climb_made">Climb Success</label>
+      <input type="checkbox" name="climb_made" id="climb_made">
+      <br>
+
+      <label for="climb_miss">Climb Attempted / Unsuccessful</label>
+      <input type="checkbox" name="climb_miss" id="climb_miss">
+    </div>
+
+  </div>
+
+  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
+      <h1>Penalties</h1>  
+      <br>
+      <label for="technical">Technical</label>
+      <br>
+      <input type="number" name="technical" value="0" id="technical">
+      <br>
+      <label for="nontechnical">Non-Technical</label>
+      <br>
+      <input type="number" name="nontechnical" value="0" id="nontechnical">
+  </div>
+
+  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white "><h3>Comment Section</h3>
+     
+         <!--Comments:<br>
+          <input type="text" name="comments" value="" id="comments">-->
+          <textarea placeholder="Insert Comments Here" name="comments" value="" id="comments"></textarea>
+
+  </div>
+
+  <input type="submit" value="submit" id="submit" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-text-red w3-round-large  w3-text-white">
+
+  </form>
+
+<p id="status" class="">Status text here</p>
+
 </body>
 </html>

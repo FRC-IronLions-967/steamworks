@@ -23,7 +23,7 @@ $values = implode(',',$values_list);
 
 $sql="INSERT INTO matches ($fields) VALUES ($values)";
 if(mysqli_query($conn, $sql)){
-echo "Match record saved successfully";
+echo "Match record saved successfully.";
 //echo $fields."<br>".$values;
 } else{
 echo "<br>Error:<br>".$sql."<br>".mysqli_error($conn);
