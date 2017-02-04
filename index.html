@@ -5,6 +5,7 @@
   <link rel='stylesheet' href="w3.css">
   <link rel='stylesheet' href="w3-theme-red.css">
   <link rel='stylesheet' href="style.css">
+  <link rel="icon" href="logo.ico" type="image/ico" sizes="16x16">
   <meta name=viewport content="width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -28,11 +29,10 @@
     <li><a href="teams.php">Team List</a></li>  
     <li><a href="admin.html">Admin</a></li>  
     <li><a href="csv.php">CSV Download</a></li>
-    <li><a href="incrementing.html">Incrementing Test</a></li>
   </ul>
 
   <!-- Match Selection -->
-  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white ">   
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right ">   
     <label for="matchnum">Match</label><br>
     <input type="number" name="matchnum" id="matchnum" min="1" max = "100" value="1"><br>
       
@@ -57,14 +57,14 @@
   </div>
             
   <!-- Autonomous -->
-  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white ">
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right ">
     <div class="title"><h1>Autonomous</h1></div>  
     
     <div>
       <label for="baseline">Baseline</label>
       <input type="checkbox" name="baseline" id="baseline">
     </div>
-    
+    <br>
     High Goal Made (estimated):<br>
     <button id="minusFiveautohighmade">-5</button>
     <button id="minusOneautohighmade">-1</button>
@@ -104,13 +104,13 @@
     <button id="plusOneautolowmiss">+1</button>
     <button id="plusFiveautolowmiss">+5</button>
     <br>
-    
+    <br>
     <div>
-          <label for="auto_gear_made">Gear Made</label><br>
-          <input type="checkbox" name="auto_gear_made" id="auto_gear_made"><br>
-          
-          <label for="auto_gear_miss">Gear Missed</label><br>
-          <input type="checkbox" name="auto_gear_miss" id="auto_gear_miss"><br>
+      <label for="auto_gear_made">Gear Made</label><br>
+      <input type="checkbox" name="auto_gear_made" id="auto_gear_made"><br>
+      
+      <label for="auto_gear_miss">Gear Missed</label><br>
+      <input type="checkbox" name="auto_gear_miss" id="auto_gear_miss"><br>
     </div>
             
     <div>    
@@ -129,13 +129,14 @@
 </div>
 
   <!-- TeleOp -->
-  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white ">
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right ">
             
     <div class="title"><h2>TeleOp</h2></div>
     
     <div class = "dropdown">         
       Cycles:<br>
       <input type="number" name="cycles" value="0" id="cycles">
+      <br>
       <br>
 
       High Goal Made (estimated):<br>
@@ -173,11 +174,11 @@
       <button id="minusOnetelelowmiss">-1</button>
 
       <input type="number" name="tele_low_miss" value="0" id="tele_low_miss" min="0" max = "250">
-      
+
       <button id="plusOnetelelowmiss">+1</button>
       <button id="plusFivetelelowhmiss">+5</button>
       <br>
-    
+      <br>
       <label for="tele_gear_made">Gears Made</label><br>
       <input type="number" name="tele_gear_made" value="0" id="tele_gear_made"> <br>
 
@@ -208,7 +209,7 @@
 
   </div>
 
-  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white ">
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right ">
       <h1>Penalties</h1>  
       <label for="technical">Technical</label>
       <br>
@@ -219,7 +220,8 @@
       <input type="number" name="nontechnical" value="0" id="nontechnical">
   </div>
 
-  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white "><h3>Comment Section</h3>
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right">
+    <h3>Comment Section</h3>
      
          <!--Comments:<br>
           <input type="text" name="comments" value="" id="comments">-->
