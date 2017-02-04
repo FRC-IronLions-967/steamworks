@@ -11,17 +11,28 @@
   <script src="scheduleData.js"></script>
   <script src="teamData.js"></script>
   <script src="inputform.js"></script>
+  <script src="incrementing.js"></script>
 </head>
 
 <!-- Division Between head and body -->
-<body class="w3-theme-d4">      
+<body class="w3-theme-d3">      
 
 <form onsubmit="return false">
 
-  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-center  "><h1>2017 FRC Scouting Site</h1></div>
-    
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-center"><h1>2017 FRC Match Scouting</h1></div>
+
+  <ul class="w3-navbar w3-theme-l3 w3-round-xxlarge w3-border-black">
+    <li><a href='index.html'>Match Scouting</a></li>
+    <li><a href="pitscouting.html">Pit Scouting</a></li>
+    <li><a href="schedule.php">Schedule</a></li>
+    <li><a href="teams.php">Team List</a></li>  
+    <li><a href="admin.html">Admin</a></li>  
+    <li><a href="csv.php">CSV Download</a></li>
+    <li><a href="incrementing.html">Incrementing Test</a></li>
+  </ul>
+
   <!-- Match Selection -->
-  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">   
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white ">   
     <label for="matchnum">Match</label><br>
     <input type="number" name="matchnum" id="matchnum" min="1" max = "100" value="1"><br>
       
@@ -46,28 +57,36 @@
   </div>
             
   <!-- Autonomous -->
-  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white ">
     <div class="title"><h1>Autonomous</h1></div>  
     
-    <div class = "dropdown">
+    <div>
       <label for="baseline">Baseline</label>
       <input type="checkbox" name="baseline" id="baseline">
     </div>
     
     High Goal Made (estimated):<br>
-    <input type="number" name="auto_high_made" value="0" id="auto_high_made">
+    <button id="minusFiveautohighmade">-5</button>
+    <button id="minusOneautohighmade">-1</button>
+    <input type="number" name="auto_high_made" value="0" id="auto_high_made" min="0" max = "250">
+    <button id="plusOneautohighmade">+1</button>
+    <button id="plusFiveautohighmade">+5</button>
     <br>
 
     High Goal Missed (estimated):<br>
-    <input type="number" name="auto_high_miss" value="0" id="auto_high_miss">
+    <button id="minusFiveautohighmiss">-5</button>
+    <button id="minusOneautohighmiss">-1</button>
+    <input type="number" name="auto_high_miss" value="0" id="auto_high_miss" min="0" max = "250">
+    <button id="plusOneautohighmiss">+1</button>
+    <button id="plusFiveautohighmiss">+5</button>
     <br>
     
     Low Goal Made (estimated):<br>
-    <input type="number" name="auto_low_made" value="0" id="auto_low_made">
+    <input type="number" name="auto_low_made" value="0" id="auto_low_made" min="0" max = "250">
     <br>
 
     Low Goal Missed (estimated):<br>
-    <input type="number" name="auto_low_miss" value="0" id="auto_low_miss">
+    <input type="number" name="auto_low_miss" value="0" id="auto_low_miss" min="0" max = "250">
     <br>
     
     <div>
@@ -94,7 +113,7 @@
 </div>
 
   <!-- TeleOp -->
-  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white ">
             
     <div class="title"><h2>TeleOp</h2></div>
     
@@ -149,9 +168,8 @@
 
   </div>
 
-  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white ">
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white ">
       <h1>Penalties</h1>  
-      <br>
       <label for="technical">Technical</label>
       <br>
       <input type="number" name="technical" value="0" id="technical">
@@ -161,7 +179,7 @@
       <input type="number" name="nontechnical" value="0" id="nontechnical">
   </div>
 
-  <div class="w3-panel w3-theme-l2 w3-padding-medium w3-round-xxlarge w3-border w3-border-black w3-text-white "><h3>Comment Section</h3>
+  <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white "><h3>Comment Section</h3>
      
          <!--Comments:<br>
           <input type="text" name="comments" value="" id="comments">-->
@@ -169,7 +187,7 @@
 
   </div>
 
-  <input type="submit" value="submit" id="submit" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-text-red w3-round-large  w3-text-white">
+  <input type="submit" value="submit" id="submit" class="w3-btn w3-theme-l3 w3-border w3-border-black w3-text-red w3-round-large  w3-text-white">
 
   </form>
 
