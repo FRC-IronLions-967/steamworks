@@ -8,7 +8,7 @@
   		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	
-	<body class"w3-theme-d3">
+	<body class="w3-theme-d3">
 		<div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-center"><h1>2017 FRC Match Schedule</h1></div>
 
   		<ul class="w3-navbar w3-theme-l3 w3-round-xxlarge w3-border-black">
@@ -20,7 +20,7 @@
     		<li><a href="csv.php">CSV Download</a></li>
   		</ul>
 
-  		<div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white">
+  		<div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right">
 
 			<table class"w3-table"><tr><th>Match</th><th colspan="3" class="w3-red" >Red</th><th colspan="3" class="w3-blue">Blue</th></tr>
 			

@@ -1,0 +1,266 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    	<link rel='stylesheet' href="w3.css">
+    	<link rel='stylesheet' href="w3-theme-red.css">
+    	<link rel='stylesheet' href="style.css">
+    	<meta name=viewport content="width=device-width">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="scheduleData.js"></script>
+      <script src="teamData.js"></script>
+      <script src="pitform.js"></script>
+	</head>
+
+	<body class="w3-theme-d3">
+		<form onsubmit="return false">
+
+			<div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-center">
+				<h1>2017 FRC Pit Scouting</h1>
+			</div>
+
+			<ul class="w3-navbar w3-theme-l3 w3-round-xxlarge w3-border-black">
+    			<li><a href='index.html'>Match Scouting</a></li>
+    			<li><a href="pitscouting.html">Pit Scouting</a></li>
+    			<li><a href="schedule.php">Schedule</a></li>
+    			<li><a href="teams.php">Team List</a></li>  
+    			<li><a href="admin.html">Admin</a></li>  
+    			<li><a href="csv.php">CSV Download</a></li>
+		</ul>
+
+    <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white">
+      <label for="team">Team Number</label><br>
+      <select id="team" value = "167" name="team">
+        <option value="167">167</option>
+        <option value="525">525</option>
+        <option value="967">967</option>
+      </select><br>
+      <br>
+
+    <label for="scout_name">Scout Name</label></br>
+    <input type="text" name="scout_name" value="" id="scout_name">
+
+    </div>
+
+		<div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white">
+			<div class="title"><h1>Drive</h1></div>
+
+      <label for="height">Robot Height</label><br>
+      <select id="height" value = "2ft" name="height">
+        <option value="2ft">2 ft</option>
+        <option value="3ft">3 ft</option>
+      </select><br>
+      <br>
+
+      <label for="orient">Drive Orientation</label><br>
+      <select id="orient" value = "long" name="orient">
+        <option value="long">Long</option>
+        <option value="wide">Wide</option>
+      </select><br>
+      <br>
+
+			<label for="drivetype">Drive Type</label><br>
+			<select id="drivetype" value = "skidsteer" name="drivetype">
+				<option value="skid4WD">Skid Steer 4WD</option>
+        <option value="skid6WD">Skid Steer 6WD+</option>
+        <option value="skid6WD">Skid Steer Treads</option>
+        <option value="mecanum">Mecanum</option>
+				<option value="swerve">Swerve</option>
+				<option value="hdrive">H-Drive</option>
+        <option value="omni">Omni/Holonomic</option>
+				<option value="other">Other</option>
+      </select><br>
+      <br>
+
+      <label for="transmission">Transmission</label><br>
+      <select id="transmission" name="transmission">
+        <option value="">Single Speed</option>
+        <option value="double">Double Speed</option>
+      </select><br>
+      <br>
+
+      <label for=""># of CIM Motors</label></br>
+      <button id="minusOneDriveMotors">-1</button>
+      <input type="number" value="4" id="driveMotors" name="driveMotors" min="0" max = "8">
+      <button id="plusOneDriveMotors">+1</button><br>
+      <br>
+
+      <label for"speed">Theoretical Top Speed</label><br>
+      <em>(enter faster speed for two speed drives)</em><br>
+      <button id="speedCalc" onClick="calcSpeed()">Calculate from GR, diam</button><br>
+      <input type="number" step="0.01" value="13" id="speed" name="speed" min="5" max = "25">ft/s<br>
+      <br>
+
+      <label for"GR">Gear Ratio</label><br>
+      <input type="number" step="0.01" value="10.71" id="GR" name="GR" min="3" max = "30"><br>
+      <br>
+
+      <label for"GR">Wheel Diameter (in)</label><br>
+      <button id="minusOneWheelDiam">-1</button>
+      <input type="number" step="0.01" value="6" id="wheelDiam" name="wheelDiam" min="3" max = "15">
+      <button id="plusOneWheelDiam">+1</button><br>
+      <br>
+
+      <label for="">Weight (no battery/bumpers)</label></br>
+      <button id="minusOneWeight">-1</button>
+      <input type="number" value="115" id="weight" name="weight" min="50" max = "120">
+      <button id="plusOneWeight">+1</button><br>
+      <br>
+    </div>
+
+    <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white">
+      <div class="title"><h1>Manipulators</h1></div>
+
+      <label for="manip_high">High Goals</label>
+      <input type="checkbox" name="manip_high" id="manip_high"><br>
+
+      <label for="manip_low">Low Goals</label>
+      <input type="checkbox" name="manip_low" id="manip_low"><br>
+
+      <label for="manip_gear">Gears</label>
+      <input type="checkbox" name="manip_gear" id="manip_gear"><br>
+
+      <label for="manip_hopper">Hoppers</label>
+      <input type="checkbox" name="manip_hopper" id="manip_hopper"><br>
+
+      <label for="manip_climb">Climb</label>
+      <input type="checkbox" name="manip_climb" id="manip_climb"><br>
+
+      <label for="manip_pickup">Floor Pickup</label>
+      <input type="checkbox" name="manip_pickup" id="manip_pickup"><br>
+
+    </div>
+
+    <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white">
+      <div class="title"><h1>Autonomous</h1></div>
+      
+      <strong>Intended Capabilities:</strong></br>
+      <label for="pitscout_auto_baseline">Baseline</label>
+      <input type="checkbox" name="pitscout_auto_baseline" id="pitscout_auto_baseline"><br>
+
+      <label for="pitscout_auto_high">High Goal</label>
+      <input type="checkbox" name="pitscout_auto_high" id="pitscout_auto_high"><br>
+
+      <label for="pitscout_auto_low">Low Goal</label>
+      <input type="checkbox" name="pitscout_auto_low" id="pitscout_auto_low"><br>
+
+      <label for="pitscout_auto_gear">Gear</label>
+      <input type="checkbox" name="pitscout_auto_gear" id="pitscout_auto_gear"><br>
+      <br>
+
+      <strong>Starting Position(s):</strong></br>
+      <label for="start_middle">Middle</label>
+      <input type="checkbox" name="start_middle" id="start_middle"><br>
+
+      <label for="start_boiler">Boiler Side</label>
+      <input type="checkbox" name="start_boiler" id="start_boiler"><br>
+
+      <label for="start_far">Far Side</label>
+      <input type="checkbox" name="start_far" id="start_far"><br>
+
+      <label for="start_left">Left Side (driver view)</label>
+      <input type="checkbox" name="start_left" id="start_left"><br>          
+
+      <label for="start_right">Right Side</label>
+      <input type="checkbox" name="start_right" id="start_right"><br>
+      <br>
+
+      <strong>Gear Auto Scoring Position(s):</strong></br>
+      <label for="gear_middle">Middle</label>
+      <input type="checkbox" name="gear_middle" id="gear_middle"><br>
+
+      <label for="gear_boiler">Boiler Side</label>
+      <input type="checkbox" name="gear_boiler" id="gear_boiler"><br>
+
+      <label for="gear_far">Far Side</label>
+      <input type="checkbox" name="gear_far" id="gear_far"><br>
+
+      <label for="gear_left">Left Side (driver view)</label>
+      <input type="checkbox" name="gear_left" id="gear_left"><br>          
+
+      <label for="gear_right">Right Side</label>
+      <input type="checkbox" name="gear_right" id="gear_right"><br>
+
+    </div>
+
+    <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white">
+      <div class="title"><h1>Appearance</h1></div>
+      <label for="build_appearance">Build Appearance</label><br>
+      <select id="build_appearance" value = "build_average" name="build_appearance">
+        <option value="">Neutral</option>
+        <option value="build_concerns">Concerns Noted</option>
+        <option value="well_built">Well Built</option>
+      </select><br>
+      <br>
+
+      <label for="wiring_appearance">Wiring Appearance</label><br>
+      <select id="wiring_appearance" value = "wiring_average" name="wiring_appearance">
+        <option value="">Neutral</option>
+        <option value="wiring_concerns">Concerns Noted</option>
+        <option value="wiring_organized">Well Organized</option>
+      </select><br>
+
+    </div>
+
+    <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border-black w3-text-white w3-margin-left w3-margin-right">
+      <h3>Comments</h3>
+      <textarea placeholder="Write Comments Here" name="pit_comments" value="" id="pit_comments"></textarea>
+    </div>
+    <br>
+    <div><input type="submit" id="submit" value="Submit"></div>
+  </form>
+  <p id="status">Status info will be displayed here.</p>
+  </div>
+  
+  <script>
+  function calcSpeed(){
+    var d = document.getElementById("wheelDiam").value;
+    var GR = document.getElementById("GR").value;
+    var v = (5310/60/GR*d/12*3.1416).toFixed(2);
+    document.getElementById("speed").value = v;
+  }
+  </script>
+	</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

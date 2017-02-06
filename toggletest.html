@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		  <style>
+		  <.select {
+			    background:rgb(255,145,0);
+			}
+			.select.highlight {
+			    background:rgb(26, 255, 0);
+			}
+			</style>
+	</head>
+
+	<body>
+		<input type="button" name="Ignore Select" value="Ignore Select" id="select" class="select" />
+		<input type="button" name="Ignore Delete" value="Ignore Delete" id="select1" class="select" />
+		<input type="button" name="Ignore Insert" value="Ignore Insert" id="select2" class="select" />
+		<input type="button" name="Ignore Update" value="Ignore Update" id="select3" class="select" />
+		<input type="button" name="Ignore Sleep" value="Ignore Sleep" id="select4" class="select" />
+
+		<script>
+		jQuery(function ($) {
+    $('.select').click(function () {
+        $(this).toggleClass('highlight')
+    })
+})
+		</script>
+	</body>
+</html>

@@ -3,7 +3,7 @@ ini_set('display_errors', 'On');
 error_reporting(E_ALL | E_STRICT);
 require_once 'db.php';
 
-$field_list = file('db_fields.txt', FILE_IGNORE_NEW_LINES);
+$field_list = file('pit_field_list.txt', FILE_IGNORE_NEW_LINES);
 //remove the first value (ID) since it is an auto_increment field that we don't include in the insert query
 array_shift($field_list);
 $fields = implode(',',$field_list);
@@ -16,14 +16,14 @@ foreach($field_list as $field_name){
 	else if(isset($_POST[$field_name])){
 		$values_list[] = "'{$_POST[$field_name]}'";
 	} else {
-		$values_list[] = "0";
+		$values_list[] = "";
 	}
 }
 $values = implode(',',$values_list);
 
-$sql="INSERT INTO matches ($fields) VALUES ($values)";
+$sql="INSERT INTO pit ($fields) VALUES ($values)";
 if(mysqli_query($conn, $sql)){
-echo "Match record saved successfully.";
+echo "Pit Scouting record saved successfully.";
 //echo $fields."<br>".$values;
 } else{
 echo "<br>Error:<br>".$sql."<br>".mysqli_error($conn);
