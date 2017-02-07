@@ -16,6 +16,7 @@ manip_high
 manip_low
 manip_gear
 manip_hopper
+hopper_size
 manip_climb
 manip_pickup
 pitscout_auto_baseline

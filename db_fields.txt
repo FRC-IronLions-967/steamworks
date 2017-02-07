@@ -2,6 +2,7 @@ ID
 timestamp
 event_code
 matchnum
+practice
 team
 scout_name
 baseline

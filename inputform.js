@@ -45,6 +45,7 @@ function ajaxInsert(){
 	$('#status').html('Connecting to database...');
 	var event_code = eventData.key;
 	var matchnum = parseInt($('#matchnum').val());
+	var practice = parseInt(document.getElementById('practice').checked | 0);
 	var team = $('#team').val();
 	var scout_name = $('#scout_name').val();
 	var baseline = parseInt(document.getElementById('baseline').checked | 0);
@@ -74,6 +75,7 @@ function ajaxInsert(){
 
 	var postData = 'event_code='+event_code+
 		'&matchnum='+matchnum+
+		'&practice='+practice+
 		'&team='+team+
 		'&scout_name='+scout_name+
 		'&baseline='+baseline+

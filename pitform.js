@@ -60,6 +60,7 @@ function ajaxInsert(){
 	var manip_low = parseInt(document.getElementById('manip_low').checked | 0);
 	var manip_gear = parseInt(document.getElementById('manip_gear').checked | 0);
 	var manip_hopper = parseInt(document.getElementById('manip_hopper').checked | 0);
+	var hopper_size = $("#hopper_size").val();
 	var manip_climb = parseInt(document.getElementById('manip_climb').checked | 0);
 	var manip_pickup = parseInt(document.getElementById('manip_pickup').checked | 0);
 	var pitscout_auto_baseline = parseInt(document.getElementById('pitscout_auto_baseline').checked | 0);
@@ -96,6 +97,7 @@ function ajaxInsert(){
 		'&manip_low='+manip_low+
 		'&manip_gear='+manip_gear+
 		'&manip_hopper='+manip_hopper+
+		'&hopper_size='+hopper_size+
 		'&manip_climb='+manip_climb+
 		'&manip_pickup='+manip_pickup+
 		'&pitscout_auto_baseline='+pitscout_auto_baseline+

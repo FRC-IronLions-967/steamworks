@@ -12,6 +12,10 @@ $values_list = array();
 foreach($field_list as $field_name){
 	if($field_name=="timestamp"){
 		$values_list[] = "ADDTIME(NOW(), '1:00:00')";
+	}
+	else if($field_name=="matchnum" && $_POST['practice']==1){
+		$values_list[] = "-"."{$_POST['matchnum']}";
+
 	}	
 	else if(isset($_POST[$field_name])){
 		$values_list[] = "'{$_POST[$field_name]}'";

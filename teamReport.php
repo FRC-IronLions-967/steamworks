@@ -4,10 +4,6 @@
 	<title>Team Report</title>
 </head>
 <body>
-	<!-- comments here -->
-<form>
-	<input type="number" id="team">
-</form>
-
+Welcome to the team report for FRC Team <?php echo $_GET['team']; ?>.
 </body>
 </html>
