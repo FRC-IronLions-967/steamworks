@@ -103,6 +103,19 @@ $(document).ready(function(){
 	$("#plusFivetelelowmiss").click(function(){
 		changeBy("tele_low_miss",5);
 	});
+//Hopper Size
+	$("#minusFivehopper").click(function(){
+		changeBy("hopper_size",-5);
+	});
+	$("#minusOnehopper").click(function(){
+		changeBy("hopper_size",-1);
+	});
+	$("#plusOnehopper").click(function(){
+		changeBy("hopper_size",1);
+	});
+	$("#plusFivehopper").click(function(){
+		changeBy("hopper_size",5);
+	});
 });
 
 function changeBy(elementID, changeAmount){

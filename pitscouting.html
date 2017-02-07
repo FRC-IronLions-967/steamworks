@@ -10,6 +10,7 @@
       <script src="scheduleData.js"></script>
       <script src="teamData.js"></script>
       <script src="pitform.js"></script>
+      <script src="incrementing.js"></script>
 	</head>
 
 	<body class="w3-theme-d3">
@@ -26,6 +27,7 @@
     			<li><a href="teams.php">Team List</a></li>  
     			<li><a href="admin.html">Admin</a></li>  
     			<li><a href="csv.php">CSV Download</a></li>
+          <li><a href="pitcsv.php">Pit CSV Download<a/><li>
 		</ul>
 
     <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white">
@@ -123,6 +125,16 @@
 
       <label for="manip_hopper">Hoppers</label>
       <input type="checkbox" name="manip_hopper" id="manip_hopper"><br>
+
+      Hopper Size: <br>
+      <button id="minusFivehopper" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
+      <button id="minusOnehopper" class="w3-btn  w3-theme-l2 w3-border w3-border-black w3-round-large">-1</button>
+
+      <input type="number" name="hopper_size" value="0" id="hopper_size" min="0" max = "250">
+
+      <button id="plusOnehopper" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+1</button>
+      <button id="plusFivehopper" class="w3-btn  w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
+      <br>
 
       <label for="manip_climb">Climb</label>
       <input type="checkbox" name="manip_climb" id="manip_climb"><br>
