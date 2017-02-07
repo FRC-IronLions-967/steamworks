@@ -9,8 +9,9 @@
   <meta name=viewport content="width=device-width">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="scheduleData.js"></script>
+  <script src="eventData.js"></script>
   <script src="teamData.js"></script>
+  <script src="scheduleData.js"></script>
   <script src="inputform.js"></script>
   <script src="incrementing.js"></script>
 </head>
@@ -34,7 +35,8 @@
   <!-- Match Selection -->
   <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right ">   
     <label for="matchnum">Match</label><br>
-    <input type="number" name="matchnum" id="matchnum" min="1" max = "100" value="1"><br>
+    <input type="number" name="matchnum" id="matchnum" min="1" max = "100" value="1">
+    <strong><span style="margin-left: 10px" id="event_info"></span></strong><br>
       
     <!-- Team Selection -->
     <div class = "dropdown">
@@ -109,7 +111,7 @@
       <!--<label for="auto_gear_made">Gear Made</label><br>-->
       <input type="button" name="auto_gear_made" id="auto_gear_made" value="Gear Made" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large"><br>
       
-      <label for="auto_gear_miss">Gear Missed</label><br>
+      <label for="auto_gear_miss">Gear Missed</label>
       <input type="checkbox" name="auto_gear_miss" id="auto_gear_miss"><br>
     </div>
             
@@ -121,9 +123,9 @@
         
     <label for="auto_pos">Position</label>
     <select id="auto_pos" name="auto_pos">
-        <option value="Pos1">1</option>
-        <option value="Pos2">2</option>
-        <option value="Pos3">3</option>
+        <option value="boil">Boiler Side</option>
+        <option value="mid">Middle</option>
+        <option value="far">Far Side</option>
     </select>
             
 </div>

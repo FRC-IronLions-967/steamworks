@@ -105,27 +105,12 @@ $(document).ready(function(){
 	});
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function changeBy(elementID, changeAmount){
 	var startAmount = parseInt($("#"+elementID).val());
-	if (startAmount + changeAmount >= 0){
+	if (startAmount + changeAmount > 0){
 		$("#"+elementID).val(startAmount + changeAmount);
+	}
+	else{
+		$("#"+elementID).val(0);
 	}
 }

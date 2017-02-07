@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	updateTeams(teamData);
 	$("#submit").click(
 		function(){
 
@@ -136,38 +137,22 @@ function ajaxInsert(){
     });//close ajax call
 }
 
-function updateTeams(arr, matchnum){
-	console.log("update team function not installed yet");
+function updateTeams(arr){
+	var teamList = [];
+		for (i = 0; i < teamData.length; i++){
+			teamList.push({num: parseInt(teamData[i]["team_number"]),
+				nick: teamData[i]["nickname"]});
+		}
 
-	// var teamList = [];
+	teamList.sort(function comp(a, b){return parseInt(a['num'])-parseInt(b['num'])});
 
-	// if(arr.length > 10){
-	// 	for (i = 0; i < arr.length; i++) {
-	// 		if (arr[i]["comp_level"]==="qm"){
-	// 			if(arr[i]["match_number"]==matchnum){
-	// 				var red = arr[i]['alliances']['red']['teams'];
-	// 				var blue = arr[i]['alliances']['blue']['teams'];
-	// 				teamList.push(parseInt(red[0].slice(3)));
-	// 				teamList.push(parseInt(red[1].slice(3)));
-	// 				teamList.push(parseInt(red[2].slice(3)));
-	// 				teamList.push(parseInt(blue[0].slice(3)));
-	// 				teamList.push(parseInt(blue[1].slice(3)));
-	// 				teamList.push(parseInt(blue[2].slice(3)));
-	// 			}
-	// 		}
-	// 	}
-	// } else {
-	// 	for (i = 0; i < teamData.length; i++){
-	// 		teamList.push(parseInt(teamData[i]["team_number"]));
-	// 	}
-	// }
-
-	// var choices = '';
-	// for(i = 0; i < teamList.length; i++){
-	// 	var team = teamList[i];
-	// 	choices += '<option value="'+team+'">'+team+'</option>\n';
-	// }
-	// document.getElementById('team').innerHTML = choices;
+	var choices = '';
+	for(i = 0; i < teamList.length; i++){
+		var num = teamList[i]['num'];
+		var nick = teamList[i]['nick']
+		choices += '<option value="'+num+'">'+num+' - '+nick.substring(0,22)+'</option>\n';
+	}
+	document.getElementById('team').innerHTML = choices;
 }
 
 function updateNickname(arr, teamnum){

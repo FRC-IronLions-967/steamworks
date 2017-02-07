@@ -88,16 +88,17 @@
       <label for"speed">Theoretical Top Speed</label><br>
       <em>(enter faster speed for two speed drives)</em><br>
       <button id="speedCalc" onClick="calcSpeed()">Calculate from GR, diam</button><br>
-      <input type="number" step="0.01" value="13" id="speed" name="speed" min="5" max = "25">ft/s<br>
+      <input type="number" step="0.1" value="13.0" id="speed" name="speed" min="5" max = "25">ft/s<br>
       <br>
 
       <label for"GR">Gear Ratio</label><br>
-      <input type="number" step="0.01" value="10.71" id="GR" name="GR" min="3" max = "30"><br>
+      <em>(only needed if top speed unknown)</em><br>
+      <input type="number" step="0.1" value="10.7" id="GR" name="GR" min="3" max = "30"><br>
       <br>
 
       <label for"GR">Wheel Diameter (in)</label><br>
       <button id="minusOneWheelDiam">-1</button>
-      <input type="number" step="0.01" value="6" id="wheelDiam" name="wheelDiam" min="3" max = "15">
+      <input type="number" step="0.1" value="6.0" id="wheelDiam" name="wheelDiam" min="3" max = "15">
       <button id="plusOneWheelDiam">+1</button><br>
       <br>
 
@@ -216,51 +217,9 @@
   function calcSpeed(){
     var d = document.getElementById("wheelDiam").value;
     var GR = document.getElementById("GR").value;
-    var v = (5310/60/GR*d/12*3.1416).toFixed(2);
+    var v = (5310/60/GR*d/12*3.1416).toFixed(1);
     document.getElementById("speed").value = v;
   }
   </script>
 	</body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>

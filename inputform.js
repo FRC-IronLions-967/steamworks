@@ -1,6 +1,8 @@
 $(document).ready(function(){
+	$('#event_info').html(eventData.key.substring(0,4)+" "+eventData.name);
 	updateTeams(scheduleData, $('#matchnum').val())
 	updateNickname(teamData, $('#team').val());
+
 	$("#submit").click(
 		function(){
 			//if (validate data function) then call AJAX
@@ -41,8 +43,7 @@ function validateForm(){
 function ajaxInsert(){
 	//jQuery AJAX call to insert_match_record.php
 	$('#status').html('Connecting to database...');
-	var event_code = scheduleData[0]["event_key"];
-	//eventCode won't work for practic matches - need a case for blank schedule data
+	var event_code = eventData.key;
 	var matchnum = parseInt($('#matchnum').val());
 	var team = $('#team').val();
 	var scout_name = $('#scout_name').val();
@@ -108,13 +109,40 @@ function ajaxInsert(){
 	    {
 	     	//reset form data for a new entry
 	     	//update status message with results of submission
-	     	$('#status').html(data);
-	     	$('#matchnum').val(matchnum+1);
 	     	window.scrollTo(0,document.body.scrollHeight);
-	     	//$('#team').val(''); 
-	     	//$('#team').focus();
-
-	     	//Show and/or hide HTML elements if necessary
+	     	console.log(data);
+	     	console.log(typeof data);
+	     	$('#status').html(data);
+	     	if(data == "Match record saved successfully."){
+	     		$('#matchnum').val(matchnum+1);
+				$("#baseline").prop('checked',false);
+				$("#auto_high_made").val(0);
+				$("#auto_high_miss").val(0);
+				$("#auto_low_made").val(0);
+				$("#auto_low_miss").val(0);
+				$("#auto_gear_made").prop('checked',false);
+				$("#auto_gear_miss").prop('checked',false);
+				$("#auto_incap").prop('checked',false);
+				$("#cycles").val(0);
+				$("#tele_high_made").val(0);
+				$("#tele_high_miss").val(0);
+				$("#tele_low_made").val(0);
+				$("#tele_low_miss").val(0);
+				$("#tele_gear_made").val(0);
+				$("#tele_gear_miss").val(0);
+				$("#climb_made").prop('checked',false);
+				$("#climb_miss").prop('checked',false);
+				$("#hopper").val(0);
+				$("#defense").prop('checked',false);
+				$("#tele_incap").prop('checked',false);
+				$("#technical").val(0);
+				$("#nontechnical").val(0);
+				$("#comments").val("");
+				$('#team').focus();
+	     	}
+	     	else{
+	     		console.log("not equal strings, apparently");
+	     	}
 	    },
 	    error: function (jqXHR, status, errorThrown)
 	    {
@@ -126,7 +154,7 @@ function ajaxInsert(){
 function updateTeams(arr, matchnum){
 	var teamList = [];
 
-	if(arr.length > 10){
+	if(arr.length > 0){
 		for (i = 0; i < arr.length; i++) {
 			if (arr[i]["comp_level"]==="qm"){
 				if(arr[i]["match_number"]==matchnum){
@@ -142,11 +170,12 @@ function updateTeams(arr, matchnum){
 			}
 		}
 	} else {
+		$('#practice').prop('checked', true);
 		for (i = 0; i < teamData.length; i++){
 			teamList.push(parseInt(teamData[i]["team_number"]));
 		}
 	}
-
+	teamList.sort(function compareInt(a, b){return parseInt(a)-parseInt(b)});
 	var choices = '';
 	for(i = 0; i < teamList.length; i++){
 		var team = teamList[i];
@@ -162,3 +191,4 @@ function updateNickname(arr, teamnum){
 		}
 	}
 }
+
