@@ -103,6 +103,32 @@ $(document).ready(function(){
 	$("#plusFivetelelowmiss").click(function(){
 		changeBy("tele_low_miss",5);
 	});
+//Gears Made
+	$("#minusFiveGearsMade").click(function(){
+		changeBy("tele_gears_made",-5);
+	});
+	$("#minusOneGearsMade").click(function(){
+		changeBy("tele_gears_made",-1);
+	});
+	$("#plusOneGearsMade").click(function(){
+		changeBy("tele_gears_made",1);
+	});
+	$("#plusFiveGearsMade").click(function(){
+		changeBy("tele_gears_made",5);
+	});
+//Gears Missed
+		$("#minusFiveGearsMissed").click(function(){
+		changeBy("tele_gears_missed",-5);
+	});
+	$("#minusOneGearsMissed").click(function(){
+		changeBy("tele_gears_missed",-1);
+	});
+	$("#plusOneGearsMissed").click(function(){
+		changeBy("tele_gears_missed",1);
+	});
+	$("#plusFiveGearsMissed").click(function(){
+		changeBy("tele_gears_missed",5);
+	});
 //Hopper Size
 	$("#minusFivehopper").click(function(){
 		changeBy("hopper_size",-5);
