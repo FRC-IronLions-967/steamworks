@@ -23,7 +23,7 @@ else {
 	$picfile ="pics/nopic.jpg";
 }
 
-echo "<img src='$picfile'><br>";
+echo "<img src='$picfile' style='max-width: 300px'><br>";
 
 $sql = "SELECT height, orient, drivetype, transmission FROM pit WHERE team={$_GET['team']}";
 $result = mysqli_query($conn,$sql);
