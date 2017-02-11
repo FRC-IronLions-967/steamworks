@@ -177,6 +177,58 @@ $(document).ready(function(){
 	$("#plusOneGearRatio").click(function(){
 		changeBy("GR",1);
 	});
+//Cycles
+	$("#minusFiveCycles").click(function(){
+		changeBy("cycles",-5);
+	});
+	$("#minusOneCycles").click(function(){
+		changeBy("cycles",-1);
+	});
+	$("#plusOneCycles").click(function(){
+		changeBy("cycles",1);
+	});
+	$("#plusFiveCycles").click(function(){
+		changeBy("cycles",5);
+	});
+//Hoppers
+	$("#minusFiveHoppers").click(function(){
+		changeBy("hopper",-5);
+	});
+	$("#minusOneHoppers").click(function(){
+		changeBy("hopper",-1);
+	});
+	$("#plusOneHoppers").click(function(){
+		changeBy("hopper",1);
+	});
+	$("#plusFiveHoppers").click(function(){
+		changeBy("hopper",5);
+	});
+//Technical
+	$("#minusFiveTechnical").click(function(){
+		changeBy("technical",-5);
+	});
+	$("#minusOneTechnical").click(function(){
+		changeBy("technical",-1);
+	});
+	$("#plusOneTechnical").click(function(){
+		changeBy("technical",1);
+	});
+	$("#plusFiveTechnical").click(function(){
+		changeBy("technical",5);
+	});
+//NonTechnical
+	$("#minusFivenontechnical").click(function(){
+		changeBy("nontechnical",-5);
+	});
+	$("#minusOnenontechnical").click(function(){
+		changeBy("nontechnical",-1);
+	});
+	$("#plusOnenontechnical").click(function(){
+		changeBy("nontechnical",1);
+	});
+	$("#plusFivenontechnical").click(function(){
+		changeBy("nontechnical",5);
+	});
 });
 
 function changeBy(elementID, changeAmount){

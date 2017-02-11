@@ -136,10 +136,15 @@
             
     <div class="title"><h2>TeleOp</h2></div>
     
-    <div class = "dropdown">         
+       
       Cycles:<br>
-      <input type="number" name="cycles" value="0" id="cycles">
-      <br>
+      <button id="minusFiveCycles" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
+      <button id="minusOneCycles" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-1</button>
+
+      <input type="number" name="cycles" value="0" id="cycles" min="0" max = "250">
+
+      <button id="plusOneCycles" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+1</button>
+      <button id="plusFiveCycles" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
       <br>
 
       High Goal Made (estimated):<br>
@@ -200,10 +205,15 @@
       <button id="plusFiveGearsMissed" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
       <br>
     
-      <br>
-      <label for="hopper">Hopper</label>
-      <input type="number" name="hopper" id="hopper">
+      Hoppers:<br>
+      <button id="minusFiveHoppers" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
+      <button id="minusOneHoppers" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-1</button>
 
+      <input type="number" name="hopper" value="0" id="hopper" min="0" max = "250">
+
+      <button id="plusOneHoppers" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+1</button>
+      <button id="plusFiveHoppers" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
+      <br>
       <br>
       <label for="tele_incap">Incapacitated</label>
       <input type="checkbox" name="tele_incap" id="tele_incap">
@@ -219,19 +229,31 @@
 
       <label for="climb_miss">Climb Attempted / Unsuccessful</label>
       <input type="checkbox" name="climb_miss" id="climb_miss">
-    </div>
-
   </div>
 
   <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right ">
       <h1>Penalties</h1>  
       <label for="technical">Technical</label>
       <br>
-      <input type="number" name="technical" value="0" id="technical">
+      <button id="minusFiveTechnical" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
+      <button id="minusOneTechnical" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-1</button>
+
+      <input type="number" name="technical" value="0" id="technical" min="0" max = "250">
+
+      <button id="plusOneTechnical" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+1</button>
+      <button id="plusFiveTechnical" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
       <br>
       <label for="nontechnical">Non-Technical</label>
       <br>
-      <input type="number" name="nontechnical" value="0" id="nontechnical">
+      <button id="minusFivenontechnical" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
+      <button id="minusOnenontechnical" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-1</button>
+
+      <input type="number" name="nontechnical" value="0" id="nontechnical" min="0" max="250">
+
+      <button id="plusOnenontechnical" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+1</button>
+      <button id="plusFivenontechnical" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
+      <br>
+
   </div>
 
   <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right">
