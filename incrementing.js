@@ -163,6 +163,20 @@ $(document).ready(function(){
 	$("#plusOneWeight").click(function(){
 		changeBy("weight",1);
 	});
+//Speed
+	$("#minusOneSpeed").click(function(){
+		changeBy("speed",-1);
+	});
+	$("#plusOneSpeed").click(function(){
+		changeBy("speed",1);
+	});
+//Gear Ratio
+	$("#minusOneGearRatio").click(function(){
+		changeBy("GR",-1);
+	});
+	$("#plusOneGearRatio").click(function(){
+		changeBy("GR",1);
+	});
 });
 
 function changeBy(elementID, changeAmount){

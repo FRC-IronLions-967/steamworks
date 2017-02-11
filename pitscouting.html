@@ -90,12 +90,16 @@
       <label for"speed">Theoretical Top Speed</label><br>
       <em>(enter faster speed for two speed drives)</em><br>
       <button id="speedCalc" onClick="calcSpeed()">Calculate from GR, diam</button><br>
-      <input type="number" step="0.1" value="13.0" id="speed" name="speed" min="5" max = "25">ft/s<br>
+      <button id="minusOneSpeed">-1</button>
+      <input type="number" step="0.1" value="13.0" id="speed" name="speed" min="5" max = "25">
+      <button id="plusOneSpeed">+1</button>ft/s<br>
       <br>
-
+      
       <label for"GR">Gear Ratio</label><br>
-      <em>(only needed if top speed unknown)</em><br>
-      <input type="number" step="0.1" value="10.7" id="GR" name="GR" min="3" max = "30"><br>
+      <em>(only needed if top speed unkown)</em><br>
+      <button id="minusOneGearRatio">-1</button>
+      <input type="number" step="0.1" value="10.7" id="GR" name="GR" min="3" max = "30">
+      <button id="plusOneGearRatio">+1</button><br>
       <br>
 
       <label for"GR">Wheel Diameter (in)</label><br>
