@@ -142,6 +142,27 @@ $(document).ready(function(){
 	$("#plusFivehopper").click(function(){
 		changeBy("hopper_size",5);
 	});
+//CIM Motors
+	$("#minusOneDriveMotors").click(function(){
+		changeBy("driveMotors",-1);
+	});
+	$("#plusOneDriveMotors").click(function(){
+		changeBy("driveMotors",1);
+	});
+//Wheel Diameter
+	$("#minusOneWheelDiam").click(function(){
+		changeBy("wheelDiam",-1);
+	});
+	$("#plusOneWheelDiam").click(function(){
+		changeBy("wheelDiam",1);
+	});
+//Weight
+	$("#minusOneWeight").click(function(){
+		changeBy("weight",-1);
+	});
+	$("#plusOneWeight").click(function(){
+		changeBy("weight",1);
+	});
 });
 
 function changeBy(elementID, changeAmount){
