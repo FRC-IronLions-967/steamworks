@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+	<title>Upload Robot Pictures</title>
+	<meta name=viewport content="width=device-width">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="teamData.js"></script>
+	<script src="eventData.js"></script>
+	<script src="uploadform.js"></script>
+</head>
+<body>
+<p><strong><span style="margin-left: 10px" id="event_info"></span></strong></p>
+<p>Upload Robot Picture</p>
+<form action="upload_pic.php" method="post" enctype="multipart/form-data">
+	<label for="team">What team's robot is in this picture?</label><br>
+    <select id="team" name="team">
+		<option value="">Choose a Team</option>
+		<option value=525>525</option>
+		<option value=967>967</option>
+	</select><br>
+	<p>Picture must be smaller than 400K; must be JPG, JPEG, or PNG</p>
+	<p>Crop your picture so just the robot is showing.</p>
+	<p>Get a good view of the robot without people in the way.</p>
+
+    <label for="fileToUpload">Select image to upload:</label><br>
+    <input type="file" name="fileToUpload" id="fileToUpload"><br>
+    <br>
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+</body>
+</html>

@@ -8,18 +8,25 @@
 	<script src="teamData.js"></script>
 	<script src="eventData.js"></script>
 	<script src="reportform.js"></script>
+	<style type="text/css">
+		html, body{
+			height:100%;
+		}
+		iframe {
+			
+		}
+
+	</style>
 </head>
 
 <body>
-<p><strong><span style="margin-left: 10px" id="event_info"></span></strong></p>
-<div class = "dropdown">
-	<h2>Team Number:</h2>
 	<select id="team" name="team">
 	<option value=167>167</option>
 	<option value=525>525</option>
 	<option value=967>967</option>
-	</select>  
-</div>
-<iframe id="infoFrame" src="about:blank"></iframe>
+	</select><br>
+	
+	<iframe id="infoFrame" src="about:blank" style="height:100%;"</iframe>
+
 </body>
 </html>
