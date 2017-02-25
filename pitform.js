@@ -14,16 +14,46 @@ $(document).ready(function(){
 
 	$("#team").change(
 		function(){
-
-
-
-			//Check if records exist yet for this team. If so, load those fields.
-			//User can submit like normal to update the record. (delete old or do UPDATE instead of INSERT)
-//			updateNickname(teamData, $('#team').val());
-			
+			lookupTeamData();
 		}
+		
+		//run ajax method to update fields if data exists
+		
 	); //close team change
 }); //close document ready
+
+function lookupTeamData(){
+	$('#status').html('Looking for team\'s data...');
+	var postData = 'team='+$('#team').val();
+	//console.log(postData);
+
+	$.ajax({
+	    url : "pitTeamGet.php",
+	    type: "GET",
+	    dataType: "json",
+	    data : postData,
+	    success: function(data,status, xhr)
+	    {
+	    	if ($.trim(data)){   
+		     	$('#status').html("Team lookup successful.");
+		     	console.log(data['drivetype']);
+			}
+			else{   
+			    $('#status').html("No existing data found for team "+$('#team').val());
+			}
+	     	//update status message with results of submission
+	     	//$('#status').html(data);
+	     	//Show and/or hide HTML elements if necessary
+	    },
+	    error: function (jqXHR, status, errorThrown)
+	    {
+	    	$('#status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
+	    }
+    });//close ajax call
+
+	//if null, do nothing
+	//if data exists, populate fields and change submit button to "update" button
+}
 
 function validateForm(){
 	// var matchnum = $('#matchnum').val();

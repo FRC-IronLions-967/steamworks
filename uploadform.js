@@ -1,6 +1,13 @@
 $(document).ready(function(){
 	$('#event_info').html(eventData.key.substring(0,4)+" "+eventData.name);
 	teamList = updateTeams(teamData);
+	$('#team').change(
+		function(){
+			console.log("Team selected.");
+			$("#existingImg").attr("src",$("#team").val());
+		}
+		);
+
 });
 
 function updateTeams(arr){
