@@ -4,11 +4,38 @@ $(document).ready(function(){
 	$('#team').change(
 		function(){
 			console.log("Team selected.");
-			$("#existingImg").attr("src",$("#team").val());
+			//$("#existingImg").attr("src",$("#team").val());
+			updatePicture();
 		}
 		);
 
 });
+
+function updatePicture(){
+	postdata = "team="+$('#team').val();
+	console.log("postdata = "+postdata);
+	$.ajax({
+		url : "get_pic_name.php",
+		type : "GET",
+		data: postdata,
+		success: function(data,status, xhr){
+			if($.trim(data)){
+				//success
+				//console.log("Pic name lookup Ajax successful");
+				//console.log(data);
+				$("#existingImg").attr("src",data);
+			}
+			else{
+				//failure
+				console.log("Pic name lookup Ajax failed");
+			}
+		},
+		error: function (jqXHR, status, errorThrown)
+	    {
+	    	$('#status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
+	    }
+	});
+}
 
 function updateTeams(arr){
 	var teamList = [];

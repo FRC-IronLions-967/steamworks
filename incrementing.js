@@ -229,7 +229,67 @@ $(document).ready(function(){
 	$("#plusFivenontechnical").click(function(){
 		changeBy("nontechnical",5);
 	});
+//Baseline
+  	$("#baseline").click(function() {
+    	$("#baseline").toggleClass("w3-theme-l2 w3-theme-l5");
+    });
+//Auto Gear Made
+  	$("#auto_gear_made").click(function() {
+    	$("#auto_gear_made").toggleClass("w3-theme-l2 w3-theme-l5");
+  	});
+//Auto Gear Missed
+  	$("#auto_gear_miss").click(function() {
+    	$("#auto_gear_miss").toggleClass("w3-theme-l2 w3-theme-l5");
+  	});
+//Auto Incap
+  	$("#auto_incap").click(function() {
+    	$("#auto_incap").toggleClass("w3-theme-l2 w3-theme-l5");
+  	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function changeBy(elementID, changeAmount){
 	var startAmount = parseInt($("#"+elementID).val());
