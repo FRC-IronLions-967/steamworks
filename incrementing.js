@@ -231,18 +231,22 @@ $(document).ready(function(){
 	});
 //Baseline
   	$("#baseline").click(function() {
+  		document.getElementById('baseline').checked = !document.getElementById('baseline').checked;
     	$("#baseline").toggleClass("w3-theme-l2 w3-theme-l5");
     });
 //Auto Gear Made
   	$("#auto_gear_made").click(function() {
+  		document.getElementById('auto_gear_made').checked = !document.getElementById('auto_gear_made').checked;
     	$("#auto_gear_made").toggleClass("w3-theme-l2 w3-theme-l5");
   	});
 //Auto Gear Missed
   	$("#auto_gear_miss").click(function() {
+  		document.getElementById('auto_gear_miss').checked = !document.getElementById('auto_gear_miss').checked;
     	$("#auto_gear_miss").toggleClass("w3-theme-l2 w3-theme-l5");
   	});
 //Auto Incap
   	$("#auto_incap").click(function() {
+  		document.getElementById('auto_incap').checked = !document.getElementById('auto_incap').checked;
     	$("#auto_incap").toggleClass("w3-theme-l2 w3-theme-l5");
   	});
 
