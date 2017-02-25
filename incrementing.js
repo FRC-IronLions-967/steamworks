@@ -249,51 +249,7 @@ $(document).ready(function(){
   		document.getElementById('auto_incap').checked = !document.getElementById('auto_incap').checked;
     	$("#auto_incap").toggleClass("w3-theme-l2 w3-theme-l5");
   	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function changeBy(elementID, changeAmount){
 	var startAmount = parseInt($("#"+elementID).val());
