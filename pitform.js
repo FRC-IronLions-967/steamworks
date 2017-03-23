@@ -157,6 +157,29 @@ function ajaxInsert(){
 	    success: function(data,status, xhr)
 	    {
 	     	//reset form data for a new entry
+	     	$('#manip_high').attr('checked', false);
+	     	$('#manip_low').attr('checked', false);
+	     	$('#manip_gear').attr('checked', false);
+	     	$('#floor_gear').attr('checked', false);
+	     	$('#manip_hopper').attr('checked', false);
+	     	$('#manip_high').attr('checked', false);
+	     	$('#manip_climb').attr('checked', false);
+	     	$('#manip_pickup').attr('checked', false);
+	     	$('#pitscout_auto_baseline').attr('checked', false);
+	     	$('#pitscout_auto_high').attr('checked', false);
+	     	$('#pitscout_auto_low').attr('checked', false);
+	     	$('#pitscout_auto_gear').attr('checked', false);
+	     	$('#start_middle').attr('checked', false);
+	     	$('#start_boiler').attr('checked', false);
+	     	$('#start_far').attr('checked', false);
+	     	$('#start_left').attr('checked', false);
+	     	$('#start_right').attr('checked', false);
+	     	$('#gear_middle').attr('checked', false);
+	     	$('#gear_boiler').attr('checked', false);
+	     	$('#gear_far').attr('checked', false);
+	     	$('#gear_left').attr('checked', false);
+	     	$('#gear_right').attr('checked', false);
+
 	     	//update status message with results of submission
 	     	$('.status').html(data);
 	     	window.scrollTo(0,document.body.scrollHeight);
