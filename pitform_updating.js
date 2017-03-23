@@ -56,8 +56,6 @@ function lookupTeamData(){
 				$('#manip_high').attr('checked',!!+data['manip_high']);
 				$('#manip_low').attr('checked',!!+data['manip_low']);
 				$('#manip_gear').attr('checked',!!+data['manip_gear']);
-				$('#gear_human_assist').attr('checked',!!+data['gear_human_assist']);
-				$('#gear_automatic_release').attr('checked',!!+data['gear_automatic_release']);
 				$('#floor_gear').attr('checked',!!+data['floor_gear']);
 				$('#manip_hopper').attr('checked',!!+data['manip_hopper']);
 				$('#manip_climb').attr('checked',!!+data['manip_climb']);
@@ -134,8 +132,6 @@ function ajaxInsert(){
 	var manip_high = parseInt(document.getElementById('manip_high').checked | 0);
 	var manip_low = parseInt(document.getElementById('manip_low').checked | 0);
 	var manip_gear = parseInt(document.getElementById('manip_gear').checked | 0);
-	var gear_human_assist = parseInt(document.getElementById('gear_human_assist').checked | 0);
-	var gear_automatic_release = parseInt(document.getElementById('gear_automatic_release').checked | 0);
 	var floor_gear = parseInt(document.getElementById('floor_gear').checked | 0);
 	var manip_hopper = parseInt(document.getElementById('manip_hopper').checked | 0);
 	var hopper_size = $("#hopper_size").val();
@@ -174,8 +170,6 @@ function ajaxInsert(){
 		'&manip_high='+manip_high+
 		'&manip_low='+manip_low+
 		'&manip_gear='+manip_gear+
-		'&gear_human_assist='+gear_human_assist+
-		'&gear_automatic_release='+gear_automatic_release+
 		'&floor_gear='+floor_gear+
 		'&manip_hopper='+manip_hopper+
 		'&hopper_size='+hopper_size+
@@ -208,8 +202,6 @@ function ajaxInsert(){
 	     	$('#manip_high').attr('checked', false);
 	     	$('#manip_low').attr('checked', false);
 	     	$('#manip_gear').attr('checked', false);
-	     	$('#gear_human_assist').attr('checked', false);
-	     	$('#gear_automatic_release').attr('checked', false);
 	     	$('#floor_gear').attr('checked', false);
 	     	$('#manip_hopper').attr('checked', false);
 	     	$('#manip_high').attr('checked', false);

@@ -31,7 +31,7 @@ function validateForm(){
 	var matchnum = $('#matchnum').val();
 	var team = $('#team').val();
 	var validated = true;
-	if(matchnum==null||isNaN(matchnum)||team==null||team==""){
+	if(matchnum==null||isNaN(matchnum)||team==null||team==0||team==""){
 		validated = false;
 		$('#status').html('Fill out form fields.');
 	}
@@ -155,6 +155,8 @@ function ajaxInsert(){
 
 function updateTeams(arr, matchnum){
 	var teamList = [];
+	//add a '0' value to the beginning to avoid letting humans forget to select and default to first in list
+	teamList.push(0);
 
 	if(arr.length > 0){
 		for (i = 0; i < arr.length; i++) {

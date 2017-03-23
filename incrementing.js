@@ -105,29 +105,29 @@ $(document).ready(function(){
 	});
 //Gears Made
 	$("#minusFiveGearsMade").click(function(){
-		changeBy("tele_gears_made",-5);
+		changeBy("tele_gear_made",-5);
 	});
 	$("#minusOneGearsMade").click(function(){
-		changeBy("tele_gears_made",-1);
+		changeBy("tele_gear_made",-1);
 	});
 	$("#plusOneGearsMade").click(function(){
-		changeBy("tele_gears_made",1);
+		changeBy("tele_gear_made",1);
 	});
 	$("#plusFiveGearsMade").click(function(){
-		changeBy("tele_gears_made",5);
+		changeBy("tele_gear_made",5);
 	});
 //Gears Missed
 		$("#minusFiveGearsMissed").click(function(){
-		changeBy("tele_gears_missed",-5);
+		changeBy("tele_gear_miss",-5);
 	});
 	$("#minusOneGearsMissed").click(function(){
-		changeBy("tele_gears_missed",-1);
+		changeBy("tele_gear_miss",-1);
 	});
 	$("#plusOneGearsMissed").click(function(){
-		changeBy("tele_gears_missed",1);
+		changeBy("tele_gear_miss",1);
 	});
 	$("#plusFiveGearsMissed").click(function(){
-		changeBy("tele_gears_missed",5);
+		changeBy("tele_gear_miss",5);
 	});
 //Hopper Size
 	$("#minusFivehopper").click(function(){
@@ -263,11 +263,6 @@ $(document).ready(function(){
   	$("#defense").click(function() {
   		document.getElementById('defense').checked = !document.getElementById('defense').checked;
     	$("#defense").toggleClass("w3-theme-l2 w3-theme-l5");
-  	});
-//Auto Incap
-  	$("#auto_incap").click(function() {
-  		document.getElementById('auto_incap').checked = !document.getElementById('auto_incap').checked;
-    	$("#auto_incap").toggleClass("w3-theme-l2 w3-theme-l5");
   	});
 //Auto Incap
   	$("#auto_incap").click(function() {

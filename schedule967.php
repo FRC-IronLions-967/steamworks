@@ -23,7 +23,6 @@
     		<li><a href="teamReport.html">Team Reports</a><li>
   		</ul>
   		<div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right">
-  			<p><a href="http://www.nemoquiz.com/steamworks/schedule967.php">967 Schedule</a></p>
 			<table class"w3-table"><tr><th>Match</th><th colspan="3" class="w3-red" >Red</th><th colspan="3" class="w3-blue">Blue</th></tr>
 			<?php
 			//Start on character 19, because the JS file includes "var scheduleData = " that we wish to ignore here.
@@ -39,8 +38,11 @@
 					$blue1 = substr($s['alliances']['blue']['teams'][0],3);
 					$blue2 = substr($s['alliances']['blue']['teams'][1],3);
 					$blue3 = substr($s['alliances']['blue']['teams'][2],3);
-					echo "<tr><td>$matchnum</td><td class='w3-theme-l2'>$red1</td><td class='w3-theme-l2'>$red2</td><td class='w3-theme-l2 right'>$red3</td>";
-					echo "<td class='b'>$blue1</td><td class='b'>$blue2</td><td class='b'>$blue3</td></tr>\n";
+					$teams = array($red1, $red2, $red3, $blue1, $blue2, $blue3);
+					if (in_array('967',$teams)){
+						echo "<tr><td>$matchnum</td><td class='w3-theme-l2'>$red1</td><td class='w3-theme-l2'>$red2</td><td class='w3-theme-l2 right'>$red3</td>";
+						echo "<td class='b'>$blue1</td><td class='b'>$blue2</td><td class='b'>$blue3</td></tr>\n";
+					}
 				}
 			}
 			// $blue1 = $sched[36]['alliances']['blue']['teams'][0];

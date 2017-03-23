@@ -37,3 +37,5 @@ gear_right
 build_appearance
 wiring_appearance
 pit_comments
+gear_human_assist
+gear_automatic_release

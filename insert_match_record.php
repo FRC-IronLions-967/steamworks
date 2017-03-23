@@ -17,6 +17,10 @@ foreach($field_list as $field_name){
 		$values_list[] = "-"."{$_POST['matchnum']}";
 
 	}	
+	else if($field_name=="comments"){
+		$escaped_comments = mysqli_real_escape_string($conn,$_POST[$field_name]);
+		$values_list[] = "'$escaped_comments'";
+	}
 	else if(isset($_POST[$field_name])){
 		$values_list[] = "'{$_POST[$field_name]}'";
 	} else {

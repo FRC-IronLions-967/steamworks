@@ -84,7 +84,8 @@
       </select><br>
       <br>
 
-      <label for=""># of CIM Motors</label></br>
+      <label for=""># of CIM Motors in Drive Train</label></br>
+      <em>(do not include motors from manipulators)</em></br>
       <button id="minusOneDriveMotors">-1</button>
       <input type="number" value="4" id="driveMotors" name="driveMotors" min="0" max = "8">
       <button id="plusOneDriveMotors">+1</button><br>
@@ -131,6 +132,12 @@
 
       <label for="manip_gear">Gear Holder</label>
       <input type="checkbox" name="manip_gear" id="manip_gear"><br>
+
+      <label for="gear_human_assist">Gear Release Requires Human Assitance</label>
+      <input type="checkbox" name="gear_human_assist" id="gear_human_assist"><br>
+
+      <label for="gear_automatic_release">Gear Releases Automatically - No Human Required</label>
+      <input type="checkbox" name="gear_automatic_release" id="gear_automatic_release"><br>
 
       <label for="floor_gear">Floor Gear Pickup</label>
       <input type="checkbox" name="floor_gear" id="floor_gear"><br>
