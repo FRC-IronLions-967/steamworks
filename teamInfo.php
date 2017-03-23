@@ -19,6 +19,15 @@ else if (file_exists("pics/{$_GET['team']}.jpeg")) {
 else if (file_exists("pics/{$_GET['team']}.png")) {   
 	$picfile = "pics/{$_GET['team']}.png";
 }
+else if (file_exists("pics/{$_GET['team']}.JPG")) {   
+	$picfile = "pics/{$_GET['team']}.JPG";
+}
+else if (file_exists("pics/{$_GET['team']}.JPEG")) {   
+	$picfile = "pics/{$_GET['team']}.JPEG";
+}
+else if (file_exists("pics/{$_GET['team']}.PNG")) {
+	$picfile = "pics/{$_GET['team']}.PNG";
+}
 else {
 	$picfile ="pics/nopic.jpg";
 }
@@ -31,6 +40,7 @@ if(mysqli_num_rows($result)>0){
 	$row=mysqli_fetch_assoc($result);
 	$vars = array_filter(array($row['height'],$row['orient'],$row['drivetype'], $row['driveMotors'].'CIM', $row['transmission'],$row['speed']." ft/s"));
 	echo implode(',',$vars);
+	echo '<br>';
 	//echo "<p>".$row['height'].", ".$row['orient'].", ".$row['drivetype']."</p>";
 }
 else{

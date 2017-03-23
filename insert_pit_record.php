@@ -13,6 +13,10 @@ foreach($field_list as $field_name){
 	if($field_name=="timestamp"){
 		$values_list[] = "ADDTIME(NOW(), '1:00:00')";
 	}	
+	else if($field_name=="pit_comments"){
+		$escaped_comments = mysqli_real_escape_string($conn,$_POST[$field_name]);
+		$values_list[] = "'$escaped_comments'";
+	}
 	else if(isset($_POST[$field_name])){
 		$values_list[] = "'{$_POST[$field_name]}'";
 	} else {

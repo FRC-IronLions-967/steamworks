@@ -27,7 +27,7 @@ if ($_FILES["fileToUpload"]["size"] > 400000) {
     echo "Sorry, your file is too large (max = 400K)."."<br>";
     $uploadOk = 0;
 }
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "JPG" && $imageFileType != "JPEG" && $imageFileType != "PNG") {
     echo "Sorry, only JPG, JPEG, & PNG files are allowed."."<br>";
     $uploadOk = 0;
 }

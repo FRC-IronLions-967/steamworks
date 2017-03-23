@@ -6,7 +6,7 @@ $(document).ready(function(){
 			if (validateForm()){
 				ajaxInsert();
 			} else {
-				$('#status').html('Form data not filled out correctly.');
+				$('.status').html('Form data not filled out correctly.');
 				//update status message to describe invalid form submission
 			}
 		}
@@ -23,7 +23,7 @@ $(document).ready(function(){
 }); //close document ready
 
 function lookupTeamData(){
-	$('#status').html('Looking for team\'s data...');
+	$('.status').html('Looking for team\'s data...');
 	var postData = 'team='+$('#team').val();
 	//console.log(postData);
 
@@ -35,19 +35,19 @@ function lookupTeamData(){
 	    success: function(data,status, xhr)
 	    {
 	    	if ($.trim(data)){   
-		     	$('#status').html("Team lookup successful.");
+		     	$('.status').html("Scouting data exists for team "+$('#team').val());
 		     	console.log(data['drivetype']);
 			}
 			else{   
-			    $('#status').html("No existing data found for team "+$('#team').val());
+			    $('.status').html("No existing data found for team "+$('#team').val());
 			}
 	     	//update status message with results of submission
-	     	//$('#status').html(data);
+	     	//$('.status').html(data);
 	     	//Show and/or hide HTML elements if necessary
 	    },
 	    error: function (jqXHR, status, errorThrown)
 	    {
-	    	$('#status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
+	    	$('.status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
 	    }
     });//close ajax call
 
@@ -61,7 +61,7 @@ function validateForm(){
 	// var validated = true;
 	// if(matchnum==null||isNaN(matchnum)||team==null||team==""){
 	// 	validated = false;
-	// 	$('#status').html('Fill out form fields.');
+	// 	$('.status').html('Fill out form fields.');
 	// }
 	// //validate HTML form data
 	// //if form input is invalid, validated = false
@@ -70,8 +70,9 @@ function validateForm(){
 }
 
 function ajaxInsert(){
-	$('#status').html('Connecting to database...');
-	var event_code = scheduleData[0]["event_key"];
+	$('.status').html('Connecting to database...');
+	//var event_code = scheduleData[0]["event_key"];
+	var event_code = "2017iacf";
 	var team = $("#team").val();
 	var scout_name = $("#scout_name").val();
 	var height = $("#height").val();
@@ -157,7 +158,7 @@ function ajaxInsert(){
 	    {
 	     	//reset form data for a new entry
 	     	//update status message with results of submission
-	     	$('#status').html(data);
+	     	$('.status').html(data);
 	     	window.scrollTo(0,document.body.scrollHeight);
 	     	//$('#team').val(''); 
 	     	//$('#team').focus();
@@ -166,7 +167,7 @@ function ajaxInsert(){
 	    },
 	    error: function (jqXHR, status, errorThrown)
 	    {
-	    	$('#status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
+	    	$('.status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
 	    }
     });//close ajax call
 }
