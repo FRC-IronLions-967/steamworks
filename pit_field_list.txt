@@ -15,6 +15,7 @@ weight
 manip_high
 manip_low
 manip_gear
+floor_gear
 manip_hopper
 hopper_size
 manip_climb

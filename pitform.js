@@ -89,6 +89,7 @@ function ajaxInsert(){
 	var manip_high = parseInt(document.getElementById('manip_high').checked | 0);
 	var manip_low = parseInt(document.getElementById('manip_low').checked | 0);
 	var manip_gear = parseInt(document.getElementById('manip_gear').checked | 0);
+	var floor_gear = parseInt(document.getElementById('floor_gear').checked | 0);
 	var manip_hopper = parseInt(document.getElementById('manip_hopper').checked | 0);
 	var hopper_size = $("#hopper_size").val();
 	var manip_climb = parseInt(document.getElementById('manip_climb').checked | 0);
@@ -126,6 +127,7 @@ function ajaxInsert(){
 		'&manip_high='+manip_high+
 		'&manip_low='+manip_low+
 		'&manip_gear='+manip_gear+
+		'&floor_gear='+floor_gear+
 		'&manip_hopper='+manip_hopper+
 		'&hopper_size='+hopper_size+
 		'&manip_climb='+manip_climb+

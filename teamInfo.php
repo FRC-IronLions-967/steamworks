@@ -25,11 +25,11 @@ else {
 
 echo "<img src='$picfile' style='max-width: 300px'><br>";
 
-$sql = "SELECT height, orient, drivetype, transmission FROM pit WHERE team={$_GET['team']}";
+$sql = "SELECT height, orient, drivetype, transmission, driveMotors, speed, wheelDiam, weight, hopper_size, build_appearance, wiring_appearance FROM pit WHERE team={$_GET['team']}";
 $result = mysqli_query($conn,$sql);
 if(mysqli_num_rows($result)>0){
 	$row=mysqli_fetch_assoc($result);
-	$vars = array_filter(array($row['height'],$row['orient'],$row['drivetype'], $row['transmission']));
+	$vars = array_filter(array($row['height'],$row['orient'],$row['drivetype'], $row['driveMotors'].'CIM', $row['transmission'],$row['speed']." ft/s"));
 	echo implode(',',$vars);
 	//echo "<p>".$row['height'].", ".$row['orient'].", ".$row['drivetype']."</p>";
 }
@@ -44,7 +44,7 @@ $result = mysqli_query($conn,$sql);
 if(mysqli_num_rows($result)>0){
 	?>
 	<table><tr>
-		<th>Match</th>
+		<th>M#</th>
 		<th>High</th>
 		<th>Miss</th>
 		<th>Gear</th>
