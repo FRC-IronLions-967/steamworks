@@ -15,12 +15,13 @@ $(document).ready(function(){
 	$("#team").change(
 		function(){
 			lookupTeamData();
+			$("#robot_picture").attr("src", "pics/"+$("#team").val()+".jpg");
 		}
 		
 		//run ajax method to update fields if data exists
 		
 	); //close team change
-}); //close document ready
+}); //close document ready 
 
 function lookupTeamData(){
 	$('.status').html('Looking for team\'s data...');
@@ -53,29 +54,29 @@ function lookupTeamData(){
 				$('#pit_comments').val(data['pit_comments']);
 				$('#hopper_size').val(data['hopper_size']);
 
-				$('#manip_high').attr('checked',!!+data['manip_high']);
-				$('#manip_low').attr('checked',!!+data['manip_low']);
-				$('#manip_gear').attr('checked',!!+data['manip_gear']);
-				$('#gear_human_assist').attr('checked',!!+data['gear_human_assist']);
-				$('#gear_automatic_release').attr('checked',!!+data['gear_automatic_release']);
-				$('#floor_gear').attr('checked',!!+data['floor_gear']);
-				$('#manip_hopper').attr('checked',!!+data['manip_hopper']);
-				$('#manip_climb').attr('checked',!!+data['manip_climb']);
-				$('#manip_pickup').attr('checked',!!+data['manip_pickup']);
-				$('#pitscout_auto_baseline').attr('checked',!!+data['pitscout_auto_baseline']);
-				$('#pitscout_auto_high').attr('checked',!!+data['pitscout_auto_high']);
-				$('#pitscout_auto_low').attr('checked',!!+data['pitscout_auto_low']);
-				$('#pitscout_auto_gear').attr('checked',!!+data['pitscout_auto_gear']);
-				$('#start_middle').attr('checked',!!+data['start_middle']);
-				$('#start_boiler').attr('checked',!!+data['start_boiler']);
-				$('#start_far').attr('checked',!!+data['start_far']);
-				$('#start_left').attr('checked',!!+data['start_left']);
-				$('#start_right').attr('checked',!!+data['start_right']);
-				$('#gear_middle').attr('checked',!!+data['gear_middle']);
-				$('#gear_boiler').attr('checked',!!+data['gear_boiler']);
-				$('#gear_far').attr('checked',!!+data['gear_far']);
-				$('#gear_left').attr('checked',!!+data['gear_left']);
-				$('#gear_right').attr('checked',!!+data['gear_right']);
+				$('#manip_high').prop('checked',!!+data['manip_high']);
+				$('#manip_low').prop('checked',!!+data['manip_low']);
+				$('#manip_gear').prop('checked',!!+data['manip_gear']);
+				$('#gear_human_assist').prop('checked',!!+data['gear_human_assist']);
+				$('#gear_automatic_release').prop('checked',!!+data['gear_automatic_release']);
+				$('#floor_gear').prop('checked',!!+data['floor_gear']);
+				$('#manip_hopper').prop('checked',!!+data['manip_hopper']);
+				$('#manip_climb').prop('checked',!!+data['manip_climb']);
+				$('#manip_pickup').prop('checked',!!+data['manip_pickup']);
+				$('#pitscout_auto_baseline').prop('checked',!!+data['pitscout_auto_baseline']);
+				$('#pitscout_auto_high').prop('checked',!!+data['pitscout_auto_high']);
+				$('#pitscout_auto_low').prop('checked',!!+data['pitscout_auto_low']);
+				$('#pitscout_auto_gear').prop('checked',!!+data['pitscout_auto_gear']);
+				$('#start_middle').prop('checked',!!+data['start_middle']);
+				$('#start_boiler').prop('checked',!!+data['start_boiler']);
+				$('#start_far').prop('checked',!!+data['start_far']);
+				$('#start_left').prop('checked',!!+data['start_left']);
+				$('#start_right').prop('checked',!!+data['start_right']);
+				$('#gear_middle').prop('checked',!!+data['gear_middle']);
+				$('#gear_boiler').prop('checked',!!+data['gear_boiler']);
+				$('#gear_far').prop('checked',!!+data['gear_far']);
+				$('#gear_left').prop('checked',!!+data['gear_left']);
+				$('#gear_right').prop('checked',!!+data['gear_right']);
 
 
 
@@ -205,30 +206,30 @@ function ajaxInsert(){
 	    success: function(data,status, xhr)
 	    {
 	     	//reset form data for a new entry
-	     	$('#manip_high').attr('checked', false);
-	     	$('#manip_low').attr('checked', false);
-	     	$('#manip_gear').attr('checked', false);
-	     	$('#gear_human_assist').attr('checked', false);
-	     	$('#gear_automatic_release').attr('checked', false);
-	     	$('#floor_gear').attr('checked', false);
-	     	$('#manip_hopper').attr('checked', false);
-	     	$('#manip_high').attr('checked', false);
-	     	$('#manip_climb').attr('checked', false);
-	     	$('#manip_pickup').attr('checked', false);
-	     	$('#pitscout_auto_baseline').attr('checked', false);
-	     	$('#pitscout_auto_high').attr('checked', false);
-	     	$('#pitscout_auto_low').attr('checked', false);
-	     	$('#pitscout_auto_gear').attr('checked', false);
-	     	$('#start_middle').attr('checked', false);
-	     	$('#start_boiler').attr('checked', false);
-	     	$('#start_far').attr('checked', false);
-	     	$('#start_left').attr('checked', false);
-	     	$('#start_right').attr('checked', false);
-	     	$('#gear_middle').attr('checked', false);
-	     	$('#gear_boiler').attr('checked', false);
-	     	$('#gear_far').attr('checked', false);
-	     	$('#gear_left').attr('checked', false);
-	     	$('#gear_right').attr('checked', false);
+	     	$('#manip_high').prop('checked', false);
+	     	$('#manip_low').prop('checked', false);
+	     	$('#manip_gear').prop('checked', false);
+	     	$('#gear_human_assist').prop('checked', false);
+	     	$('#gear_automatic_release').prop('checked', false);
+	     	$('#floor_gear').prop('checked', false);
+	     	$('#manip_hopper').prop('checked', false);
+	     	$('#manip_high').prop('checked', false);
+	     	$('#manip_climb').prop('checked', false);
+	     	$('#manip_pickup').prop('checked', false);
+	     	$('#pitscout_auto_baseline').prop('checked', false);
+	     	$('#pitscout_auto_high').prop('checked', false);
+	     	$('#pitscout_auto_low').prop('checked', false);
+	     	$('#pitscout_auto_gear').prop('checked', false);
+	     	$('#start_middle').prop('checked', false);
+	     	$('#start_boiler').prop('checked', false);
+	     	$('#start_far').prop('checked', false);
+	     	$('#start_left').prop('checked', false);
+	     	$('#start_right').prop('checked', false);
+	     	$('#gear_middle').prop('checked', false);
+	     	$('#gear_boiler').prop('checked', false);
+	     	$('#gear_far').prop('checked', false);
+	     	$('#gear_left').prop('checked', false);
+	     	$('#gear_right').prop('checked', false);
 
 	     	//update status message with results of submission
 	     	$('.status').html(data);

@@ -75,15 +75,15 @@ function matchLookup(){
 				$('#comments	').val(data['comments']);
 
 
-				$('#practice').attr('checked',!!+data['practice']);
-				$('#baseline').attr('checked',!!+data['baseline']);
-				$('#auto_gear_made').attr('checked',!!+data['auto_gear_made']);
-				$('#auto_gear_miss').attr('checked',!!+data['auto_gear_miss']);
-				$('#auto_incap').attr('checked',!!+data['auto_incap']);
-				$('#climb_made').attr('checked',!!+data['climb_made']);
-				$('#climb_miss').attr('checked',!!+data['climb_miss']);
-				$('#defense').attr('checked',!!+data['defense']);
-				$('#tele_incap').attr('checked',!!+data['tele_incap']);
+				$('#practice').prop('checked',!!+data['practice']);
+				$('#baseline').prop('checked',!!+data['baseline']);
+				$('#auto_gear_made').prop('checked',!!+data['auto_gear_made']);
+				$('#auto_gear_miss').prop('checked',!!+data['auto_gear_miss']);
+				$('#auto_incap').prop('checked',!!+data['auto_incap']);
+				$('#climb_made').prop('checked',!!+data['climb_made']);
+				$('#climb_miss').prop('checked',!!+data['climb_miss']);
+				$('#defense').prop('checked',!!+data['defense']);
+				$('#tele_incap').prop('checked',!!+data['tele_incap']);
 			}
 			else{   
 			    $('.status').html("No match data found for match "+$('#matchnum').val()+", team "+$('#team').val());
