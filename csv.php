@@ -4,12 +4,17 @@ error_reporting(E_ALL | E_STRICT);
 
 //load field names
 $field_list = file('db_fields.txt', FILE_IGNORE_NEW_LINES);
+//Shift out the first three rows - not needed in output file
+array_shift($field_list);
+array_shift($field_list);
+array_shift($field_list);
+array_shift($field_list);
 $fields = implode(',',$field_list);
 
 //database query
 require_once('db.php');
-//$sql = "SELECT $fields FROM matches ORDER BY team, matchnum";
-$sql = "SELECT * FROM matches WHERE ID IN (SELECT MAX(ID) FROM matches GROUP BY matchnum, team)";
+$sql = "SELECT $fields FROM matches ORDER BY team, matchnum";
+//$sql = "SELECT * FROM matches WHERE ID IN (SELECT MAX(ID) FROM matches GROUP BY matchnum, team)";
 $result = mysqli_query($conn,$sql);
 $filename = 'matches.csv';
 $f = fopen('php://memory', 'w'); 
