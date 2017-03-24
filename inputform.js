@@ -9,7 +9,7 @@ $(document).ready(function(){
 			if (validateForm()){
 				ajaxInsert();
 			} else {
-				$('#status').html('Form data not filled out correctly.');
+				$('.status').html('Form data not filled out correctly.');
 				//update status message to describe invalid form submission
 			}
 		}
@@ -23,6 +23,7 @@ $(document).ready(function(){
 	$("#team").change(
 		function(){
 			updateNickname(teamData, $('#team').val());
+			matchLookup();
 		}
 	); //close team change
 }); //close document ready
@@ -33,16 +34,94 @@ function validateForm(){
 	var validated = true;
 	if(matchnum==null||isNaN(matchnum)||team==null||team==0||team==""){
 		validated = false;
-		$('#status').html('Fill out form fields.');
+		$('.status').html('Fill out form fields.');
 	}
 	//validate HTML form data
 	//if form input is invalid, validated = false
 	return validated;
 }
 
+function matchLookup(){
+	$('.status').html('Looking for team\'s data...');
+	var postData = 'matchnum='+$('#matchnum').val()+'&team='+$('#team').val();
+	// console.log(postData);
+
+		$.ajax({
+	    url : "matchGet.php",
+	    type: "GET",
+	    dataType: "json",
+	    data : postData,
+	    success: function(data,status, xhr)
+	    {
+	    	if ($.trim(data)){   
+		     	$('.status').html("Data exists for match "+$('#matchnum').val()+", team "+$('#team').val());
+
+				$('#scout_name').val(data['scout_name']);
+				$('#auto_high_made').val(data['auto_high_made']);
+				$('#auto_high_miss').val(data['auto_high_miss']);
+				$('#auto_low_made').val(data['auto_low_made']);
+				$('#auto_low_miss').val(data['auto_low_miss']);
+				$('#auto_pos').val(data['auto_pos']);
+				$('#cycles').val(data['cycles']);
+				$('#tele_high_made').val(data['tele_high_made']);
+				$('#tele_high_miss').val(data['tele_high_miss']);
+				$('#tele_low_made').val(data['tele_low_made']);
+				$('#tele_low_miss').val(data['tele_low_miss']);
+				$('#tele_gear_made').val(data['tele_gear_made']);
+				$('#tele_gear_miss').val(data['tele_gear_miss']);
+				$('#hopper').val(data['hopper']);
+				$('#technical').val(data['technical']);
+				$('#nontechnical').val(data['nontechnical']);
+				$('#comments	').val(data['comments']);
+
+
+				$('#practice').attr('checked',!!+data['practice']);
+				$('#baseline').attr('checked',!!+data['baseline']);
+				$('#auto_gear_made').attr('checked',!!+data['auto_gear_made']);
+				$('#auto_gear_miss').attr('checked',!!+data['auto_gear_miss']);
+				$('#auto_incap').attr('checked',!!+data['auto_incap']);
+				$('#climb_made').attr('checked',!!+data['climb_made']);
+				$('#climb_miss').attr('checked',!!+data['climb_miss']);
+				$('#defense').attr('checked',!!+data['defense']);
+				$('#tele_incap').attr('checked',!!+data['tele_incap']);
+			}
+			else{   
+			    $('.status').html("No match data found for match "+$('#matchnum').val()+", team "+$('#team').val());
+			    $("#baseline").prop('checked',false);
+				$("#auto_high_made").val(0);
+				$("#auto_high_miss").val(0);
+				$("#auto_low_made").val(0);
+				$("#auto_low_miss").val(0);
+				$("#auto_gear_made").prop('checked',false);
+				$("#auto_gear_miss").prop('checked',false);
+				$("#auto_incap").prop('checked',false);
+				$("#cycles").val(0);
+				$("#tele_high_made").val(0);
+				$("#tele_high_miss").val(0);
+				$("#tele_low_made").val(0);
+				$("#tele_low_miss").val(0);
+				$("#tele_gear_made").val(0);
+				$("#tele_gear_miss").val(0);
+				$("#climb_made").prop('checked',false);
+				$("#climb_miss").prop('checked',false);
+				$("#hopper").val(0);
+				$("#defense").prop('checked',false);
+				$("#tele_incap").prop('checked',false);
+				$("#technical").val(0);
+				$("#nontechnical").val(0);
+				$("#comments").val("");
+			}
+	    },
+	    error: function (jqXHR, status, errorThrown)
+	    {
+	    	$('.status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
+	    }
+    });//close ajax call
+}
+
 function ajaxInsert(){
 	//jQuery AJAX call to insert_match_record.php
-	$('#status').html('Connecting to database...');
+	$('.status').html('Connecting to database...');
 	var event_code = eventData.key;
 	var matchnum = parseInt($('#matchnum').val());
 	var practice = parseInt(document.getElementById('practice').checked | 0);
@@ -112,9 +191,9 @@ function ajaxInsert(){
 	     	//reset form data for a new entry
 	     	//update status message with results of submission
 	     	window.scrollTo(0,document.body.scrollHeight);
-	     	console.log(data);
-	     	console.log(typeof data);
-	     	$('#status').html(data);
+	     	// console.log(data);
+	     	// console.log(typeof data);
+	     	$('.status').html(data);
 	     	if(data == "Match record saved successfully."){
 	     		$('#matchnum').val(matchnum+1);
 				$("#baseline").prop('checked',false);
@@ -143,12 +222,13 @@ function ajaxInsert(){
 				$('#team').focus();
 	     	}
 	     	else{
-	     		console.log("not equal strings, apparently");
+	     		// console.log("not equal strings, apparently");
+	     		$('.status').html('Match not saved properly?');
 	     	}
 	    },
 	    error: function (jqXHR, status, errorThrown)
 	    {
-	    	$('#status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
+	    	$('.status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
 	    }
     });//close ajax call
 }

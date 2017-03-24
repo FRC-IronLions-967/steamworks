@@ -24,6 +24,7 @@
   		</ul>
   		<div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right">
 
+  			<p><a href="http://www.nemoquiz.com/steamworks/teams_pics.php">Load Team Pictures</a></p>
 			<table><tr><th>Team</th><th>Nickname</th><th>Location</th></tr>
 			<?php
 			//Start on character 15, because the JS file includes "var teamData = " that we wish to ignore here.

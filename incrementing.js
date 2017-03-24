@@ -229,46 +229,46 @@ $(document).ready(function(){
 	$("#plusFivenontechnical").click(function(){
 		changeBy("nontechnical",5);
 	});
-//Baseline
-  	$("#baseline").click(function() {
-  		document.getElementById('baseline').checked = !document.getElementById('baseline').checked;
-    	$("#baseline").toggleClass("w3-theme-l2 w3-theme-l5");
-    });
-//Auto Gear Made
-  	$("#auto_gear_made").click(function() {
-  		document.getElementById('auto_gear_made').checked = !document.getElementById('auto_gear_made').checked;
-    	$("#auto_gear_made").toggleClass("w3-theme-l2 w3-theme-l5");
-  	});
-//Auto Gear Missed
-  	$("#auto_gear_miss").click(function() {
-  		document.getElementById('auto_gear_miss').checked = !document.getElementById('auto_gear_miss').checked;
-    	$("#auto_gear_miss").toggleClass("w3-theme-l2 w3-theme-l5");
-  	});
-//climb_made
-  	$("#climb_made").click(function() {
-  		document.getElementById('climb_made').checked = !document.getElementById('climb_made').checked;
-    	$("#climb_made").toggleClass("w3-theme-l2 w3-theme-l5");
-  	});
-//climb_miss
-  	$("#climb_miss").click(function() {
-  		document.getElementById('climb_miss').checked = !document.getElementById('climb_miss').checked;
-    	$("#climb_miss").toggleClass("w3-theme-l2 w3-theme-l5");
-  	});
-//Tele Incap
-  	$("#tele_incap").click(function() {
-  		document.getElementById('tele_incap').checked = !document.getElementById('tele_incap').checked;
-    	$("#tele_incap").toggleClass("w3-theme-l2 w3-theme-l5");
-  	});
-//Defense
-  	$("#defense").click(function() {
-  		document.getElementById('defense').checked = !document.getElementById('defense').checked;
-    	$("#defense").toggleClass("w3-theme-l2 w3-theme-l5");
-  	});
-//Auto Incap
-  	$("#auto_incap").click(function() {
-  		document.getElementById('auto_incap').checked = !document.getElementById('auto_incap').checked;
-    	$("#auto_incap").toggleClass("w3-theme-l2 w3-theme-l5");
-  	});
+// //Baseline
+//   	$("#baseline").click(function() {
+//   		document.getElementById('baseline').checked = !document.getElementById('baseline').checked;
+//     	$("#baseline").toggleClass("w3-theme-l5");
+//     });
+// //Auto Gear Made
+//   	$("#auto_gear_made").click(function() {
+//   		document.getElementById('auto_gear_made').checked = !document.getElementById('auto_gear_made').checked;
+//     	$("#auto_gear_made").toggleClass("w3-theme-l2 w3-theme-l5");
+//   	});
+// //Auto Gear Missed
+//   	$("#auto_gear_miss").click(function() {
+//   		document.getElementById('auto_gear_miss').checked = !document.getElementById('auto_gear_miss').checked;
+//     	$("#auto_gear_miss").toggleClass("w3-theme-l2 w3-theme-l5");
+//   	});
+// //climb_made
+//   	$("#climb_made").click(function() {
+//   		document.getElementById('climb_made').checked = !document.getElementById('climb_made').checked;
+//     	$("#climb_made").toggleClass("w3-theme-l2 w3-theme-l5");
+//   	});
+// //climb_miss
+//   	$("#climb_miss").click(function() {
+//   		document.getElementById('climb_miss').checked = !document.getElementById('climb_miss').checked;
+//     	$("#climb_miss").toggleClass("w3-theme-l2 w3-theme-l5");
+//   	});
+// //Tele Incap
+//   	$("#tele_incap").click(function() {
+//   		document.getElementById('tele_incap').checked = !document.getElementById('tele_incap').checked;
+//     	$("#tele_incap").toggleClass("w3-theme-l2 w3-theme-l5");
+//   	});
+// //Defense
+//   	$("#defense").click(function() {
+//   		document.getElementById('defense').checked = !document.getElementById('defense').checked;
+//     	$("#defense").toggleClass("w3-theme-l2 w3-theme-l5");
+//   	});
+// //Auto Incap
+//   	$("#auto_incap").click(function() {
+//   		document.getElementById('auto_incap').checked = !document.getElementById('auto_incap').checked;
+//     	$("#auto_incap").toggleClass("w3-theme-l2 w3-theme-l5");
+//   	});
 });
 
 function changeBy(elementID, changeAmount){

@@ -8,7 +8,8 @@ $fields = implode(',',$field_list);
 
 //database query
 require_once('db.php');
-$sql = "SELECT $fields FROM matches ORDER BY team, matchnum";
+//$sql = "SELECT $fields FROM matches ORDER BY team, matchnum";
+$sql = "SELECT * FROM matches WHERE ID IN (SELECT MAX(ID) FROM matches GROUP BY matchnum, team)";
 $result = mysqli_query($conn,$sql);
 $filename = 'matches.csv';
 $f = fopen('php://memory', 'w'); 

@@ -24,7 +24,7 @@
   		</ul>
   		<div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right">
 
-			<table><tr><th>Team</th><th>Nickname</th><th>Location</th></tr>
+			<table>
 			<?php
 			//Start on character 15, because the JS file includes "var teamData = " that we wish to ignore here.
 			$string =substr(file_get_contents("teamData.js"),15);
@@ -41,7 +41,8 @@
 				$nickname = $t['nickname'];
 				$locality = $t['locality'];
 				$region = $t['region'];
-				echo "<tr><td>$teamnum</td><td>$nickname</td><td>{$locality}, {$region}</td></tr>\n";
+				echo "<tr><td>$teamnum $nickname<br>\n";
+				echo "<img src='pics/{$teamnum}.jpg' alt='No Picture' style='max-width: 250px'><br></td></tr>\n";
 			}
 			
 			// $blue1 = $sched[36]['alliances']['blue']['teams'][0];
