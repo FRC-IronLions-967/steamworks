@@ -87,6 +87,7 @@ function matchLookup(){
 			}
 			else{   
 			    $('.status').html("No match data found for match "+$('#matchnum').val()+", team "+$('#team').val());
+			    $('#scout_name').val("");
 			    $("#baseline").prop('checked',false);
 				$("#auto_high_made").val(0);
 				$("#auto_high_miss").val(0);
@@ -196,6 +197,7 @@ function ajaxInsert(){
 	     	$('.status').html(data);
 	     	if(data == "Match record saved successfully."){
 	     		$('#matchnum').val(matchnum+1);
+	     		$('#team').val(0);
 				$("#baseline").prop('checked',false);
 				$("#auto_high_made").val(0);
 				$("#auto_high_miss").val(0);
