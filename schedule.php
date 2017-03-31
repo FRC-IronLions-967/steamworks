@@ -18,10 +18,10 @@
     		<li><a href="teams.php">Team List</a></li>  
     		<li><a href="admin.html">Admin</a></li>  
     		<li><a href="csv.php">CSV Download</a></li>
-    		<li><a href="pitcsv.php">Pit CSV Download</a><li>
-    		<li><a href="uploadPic.html">Upload Team Photos</a><li>
-    		<li><a href="teamReport.html">Team Reports</a><li>
-		<li><a herf="intro.html">Intro</a><li>
+    		<li><a href="pitcsv.php">Pit CSV Download</a></li>
+    		<li><a href="uploadPic.html">Upload Team Photos</a></li>
+    		<li><a href="teamReport.html">Team Reports</a></li>
+		<li><a href="intro.html">Intro</a></li>
   		</ul>
   		<div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white w3-margin-left w3-margin-right">
   			<p><a href="http://www.nemoquiz.com/steamworks/schedule967.php">967 Schedule</a></p>
