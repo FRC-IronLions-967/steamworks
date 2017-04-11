@@ -25,7 +25,7 @@ foreach($field_list as $field_name){
 }
 $values = implode(',',$values_list);
 
-$sql="INSERT INTO pit ($fields) VALUES ($values)";
+$sql="REPLACE INTO pit ($fields) VALUES ($values)";
 if(mysqli_query($conn, $sql)){
 echo "Pit Scouting record saved successfully.";
 //echo $fields."<br>".$values;

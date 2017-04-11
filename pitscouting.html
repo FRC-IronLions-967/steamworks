@@ -67,15 +67,15 @@
       <br>
 
 			<label for="drivetype">Drive Type</label><br>
+      <em>("tank" and "arcade" are skid steer)</em></br>
 			<select id="drivetype" value = "skidsteer" name="drivetype">
 				<option value="skid4WD">Skid Steer 4WD</option>
         <option value="skid6WD">Skid Steer 6WD+</option>
-        <option value="skid6WD">Skid Steer Treads</option>
+        <option value="skid6WD">Treads</option>
         <option value="mecanum">Mecanum</option>
 				<option value="swerve">Swerve</option>
 				<option value="hdrive">H-Drive</option>
         <option value="omni">Omni/Holonomic</option>
-				<option value="other">Other</option>
       </select><br>
       <br>
 
@@ -97,6 +97,7 @@
       <em>(enter faster speed for two speed drives)</em><br>
       <em>(Default values are for the Kit of Parts Drive></em><br>
       <em>(8-10 ft/s is slow-ish; 11-13 is medium; 14-16 is fast, 17+ is very fast></em><br>
+      <em>Leave blank if unknown.</em>
       <button id="speedCalc" onClick="calcSpeed()">Calculate from GR, diam</button><br>
       <button id="minusOneSpeed">-1</button>
       <input type="number" step="0.1" value="13.0" id="speed" name="speed" min="5" max = "25">
@@ -167,6 +168,14 @@
 
     <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white">
       <div class="title"><h1>Autonomous</h1></div>
+
+      <strong>Programming Language</strong><br>
+      <select id="language">
+        <option value="">???</option>
+        <option value="C++">C++</option>
+        <option value="Java">Java</option>
+        <option value="Labview">Labview</option>
+      </select><br><br>
       
       <strong>Intended Capabilities:</strong></br>
       <label for="pitscout_auto_baseline">Baseline</label>

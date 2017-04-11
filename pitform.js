@@ -53,6 +53,7 @@ function lookupTeamData(){
 				$('#wiring_appearance').val(data['wiring_appearance']);
 				$('#pit_comments').val(data['pit_comments']);
 				$('#hopper_size').val(data['hopper_size']);
+				$('#language').val(data['language']);
 
 				$('#manip_high').prop('checked',!!+data['manip_high']);
 				$('#manip_low').prop('checked',!!+data['manip_low']);
@@ -78,6 +79,8 @@ function lookupTeamData(){
 				$('#gear_left').prop('checked',!!+data['gear_left']);
 				$('#gear_right').prop('checked',!!+data['gear_right']);
 
+				$('#status').html('Found team data.');
+
 
 
 
@@ -92,7 +95,7 @@ function lookupTeamData(){
 	    },
 	    error: function (jqXHR, status, errorThrown)
 	    {
-	    	$('.status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
+	    	$('.status').html('there was an error ' + errorThrown + ' with status ' + status);
 	    }
     });//close ajax call
 
@@ -131,6 +134,7 @@ function ajaxInsert(){
 	var weight = $("#weight").val();
 	var build_appearance = $("#build_appearance").val();
 	var wiring_appearance = $("#wiring_appearance").val();
+	var language = $("#language").val();
 	var pit_comments = $('#pit_comments').val();
 	var manip_high = parseInt(document.getElementById('manip_high').checked | 0);
 	var manip_low = parseInt(document.getElementById('manip_low').checked | 0);
@@ -182,6 +186,7 @@ function ajaxInsert(){
 		'&hopper_size='+hopper_size+
 		'&manip_climb='+manip_climb+
 		'&manip_pickup='+manip_pickup+
+		'&language='+language+
 		'&pitscout_auto_baseline='+pitscout_auto_baseline+
 		'&pitscout_auto_high='+pitscout_auto_high+
 		'&pitscout_auto_low='+pitscout_auto_low+
@@ -206,6 +211,8 @@ function ajaxInsert(){
 	    success: function(data,status, xhr)
 	    {
 	     	//reset form data for a new entry
+	     	$('#language').val("");
+
 	     	$('#manip_high').prop('checked', false);
 	     	$('#manip_low').prop('checked', false);
 	     	$('#manip_gear').prop('checked', false);

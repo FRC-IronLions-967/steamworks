@@ -20,7 +20,8 @@ $f = fopen('php://memory', 'w');
 
 //header rows
 //change first header row, because starting a CSV with "ID" makes excel throw a filetype error (??)
-$field_list_display[0] = "pit_ID";
+//No more id field, so this is all unnecessary. Keeping here for future reference.
+// $field_list_display[0] = "pit_ID";
 fputcsv($f, $field_list_display);
 //data rows
 while ($row=mysqli_fetch_assoc($result)){

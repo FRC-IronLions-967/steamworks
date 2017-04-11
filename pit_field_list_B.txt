@@ -1,4 +1,3 @@
-L.ID
 L.timestamp
 L.event_code
 L.team
@@ -22,6 +21,7 @@ L.manip_hopper
 L.hopper_size
 L.manip_climb
 L.manip_pickup
+L.language
 L.pitscout_auto_baseline
 L.pitscout_auto_high
 L.pitscout_auto_low

@@ -1,4 +1,3 @@
-ID
 timestamp
 event_code
 team
@@ -15,11 +14,14 @@ weight
 manip_high
 manip_low
 manip_gear
+gear_human_assist
+gear_automatic_release
 floor_gear
 manip_hopper
 hopper_size
 manip_climb
 manip_pickup
+language
 pitscout_auto_baseline
 pitscout_auto_high
 pitscout_auto_low
@@ -37,5 +39,3 @@ gear_right
 build_appearance
 wiring_appearance
 pit_comments
-gear_human_assist
-gear_automatic_release
