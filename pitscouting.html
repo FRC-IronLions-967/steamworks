@@ -43,6 +43,13 @@
       </select><br>
     
     <p><img src="pics/nopic.jpg" alt="No picture" id="robot_picture" style='max-width: 300px'></p>
+<!--
+    <form action="upload_pic.php" method="post" enctype="multipart/form-data">
+      Picture Upload: see <strong><a href="http://www.nemoquiz.com/steamworks/UploadPic.html">Instructions Here</a></strong><br>
+      <input type="file" name="fileToUpload" id="fileToUpload"><br>
+      <input type="submit" id="pic_submit" value="Upload Image" name="submit">
+    </form><br><br>
+-->
 
     <label for="scout_name">Scout Name</label></br>
     <input type="text" name="scout_name" value="" id="scout_name">
@@ -54,6 +61,7 @@
 
       <label for="height">Robot Height</label><br>
       <select id="height" value = "2ft" name="height">
+        <option value="">???</option>
         <option value="2ft">2 ft</option>
         <option value="3ft">3 ft</option>
       </select><br>
@@ -61,6 +69,7 @@
 
       <label for="orient">Drive Orientation</label><br>
       <select id="orient" value = "long" name="orient">
+        <option value="">???</option>
         <option value="long">Long</option>
         <option value="wide">Wide</option>
       </select><br>
@@ -69,6 +78,7 @@
 			<label for="drivetype">Drive Type</label><br>
       <em>("tank" and "arcade" are skid steer)</em></br>
 			<select id="drivetype" value = "skidsteer" name="drivetype">
+        <option value="">???</option>
 				<option value="skid4WD">Skid Steer 4WD</option>
         <option value="skid6WD">Skid Steer 6WD+</option>
         <option value="skid6WD">Treads</option>
@@ -81,6 +91,7 @@
 
       <label for="transmission">Transmission</label><br>
       <select id="transmission" name="transmission">
+        <option value="">???</option>
         <option value="">Single Speed</option>
         <option value="2spd">Double Speed</option>
       </select><br>
@@ -175,7 +186,11 @@
         <option value="C++">C++</option>
         <option value="Java">Java</option>
         <option value="Labview">Labview</option>
-      </select><br><br>
+        <option value="Python">Python</option>
+      </select><br>
+      <label for="open_source">Open Source / Code on web?</label>
+      <input type="checkbox" name="open_source" id="open_source"><br><br>
+
       
       <strong>Intended Capabilities:</strong></br>
       <label for="pitscout_auto_baseline">Baseline</label>

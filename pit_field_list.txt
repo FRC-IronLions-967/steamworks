@@ -22,6 +22,7 @@ hopper_size
 manip_climb
 manip_pickup
 language
+open_source
 pitscout_auto_baseline
 pitscout_auto_high
 pitscout_auto_low

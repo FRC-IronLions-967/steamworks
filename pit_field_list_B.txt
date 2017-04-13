@@ -22,6 +22,7 @@ L.hopper_size
 L.manip_climb
 L.manip_pickup
 L.language
+L.open_source
 L.pitscout_auto_baseline
 L.pitscout_auto_high
 L.pitscout_auto_low

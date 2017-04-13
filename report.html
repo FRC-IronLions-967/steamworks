@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <link rel='stylesheet' href="w3.css">
+  <link rel='stylesheet' href="w3-theme-red.css">
+  <link rel='stylesheet' href="style.css">
+  <meta name=viewport content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="teamData.js"></script>
+  <script src="report.js"></script>
+</head>
+
+<body class="w3-theme-d3">
+<ul class="w3-navbar w3-theme-l3 w3-round-xxlarge w3-border-black">
+  <li><a href="pitscouting.html">Pit Scouting</a></li>
+  <li><a href="schedule.php">Schedule</a></li>
+</ul>
+
+<div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white">
+  <p class="status">Status info will be displayed here.</p>
+  <label for="team">Team Number</label><br>
+  <select id="team" value = "167" name="team">
+    <option value="167">167</option>
+    <option value="525">525</option>
+    <option value="967">967</option>
+  </select><br>
+
+  <p><img src="pics/nopic.jpg" alt="No picture" id="robot_picture" style='max-width: 300px'></p>
+
+  <p>
+    <!--
+    <strong>General:</strong>
+    <span id="height"></span>
+    <span id="weight"></span>
+    <br>
+    -->
+    <strong>Drive: </strong>
+    <span id="drivetype"></span>
+    <span id="transmission"></span>
+    <span id="orient"></span>
+    <span id="driveMotors"></span>
+    <span id="speed"></span>
+    <br>
+    <strong>Floor Gear Pickup: </strong><span id="floor_gear"></span><br>
+    <strong>Gear Release: </strong><span id="gear_release">gear_release</span>
+  </p>
+  
+  <p>
+    <strong>Matches Played: </strong><span id="numberOfMatches">?</span><br>
+    <strong>Auto Gear:</strong> <span id="auto_pct"></span><br>
+    <strong>Min/Avg/Max Gears:</strong> 
+    <span id="min_gears">?</span> / <span id="avg_gears">?</span> / <span id="max_gears">?</span><br>
+    <strong>Climb:</strong> <span id="climb_pct"></span><br>
+
+
+  </p>
+
+</div>
+</body>
+</html>

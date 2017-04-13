@@ -23,6 +23,61 @@ $(document).ready(function(){
 	); //close team change
 }); //close document ready 
 
+// function uploadPicClick(){
+// //https://gist.github.com/ebidel/2410898
+
+// 	document.querySelector('#fileToUpload').addEventListener('change', function(e) {
+//   	var file = this.files[0];
+// 	var fd = new FormData();
+//   	fd.append("afile", file);
+//   	// These extra params aren't necessary but show that you can include other data.
+//   	fd.append("username", "Groucho");
+//   	fd.append("accountnum", 123456);
+
+
+// 	var http = new XMLHttpRequest();
+// 	var url = "upload_pic.php";
+// 	var params = "lorem=ipsum&name=binny";
+// 	http.open("POST", url, true);
+
+// 	//Send the proper header information along with the request
+// 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+// 	http.onreadystatechange = function() {//Call a function when the state changes.
+// 	    if(http.readyState == 4 && http.status == 200) {
+// 	        alert(http.responseText);
+// 	    }
+// 	}
+// 	http.send(fd);
+// }
+
+//*****Do I need update picture for the upload button?*****
+// function updatePicture(){
+// 	postdata = "team="+$('#team').val();
+// 	console.log("postdata = "+postdata);
+// 	$.ajax({
+// 		url : "get_pic_name.php",
+// 		type : "GET",
+// 		data: postdata,
+// 		success: function(data,status, xhr){
+// 			if($.trim(data)){
+// 				//success
+// 				//console.log("Pic name lookup Ajax successful");
+// 				//console.log(data);
+// 				$("#robot_picture").attr("src",data);
+// 			}
+// 			else{
+// 				//failure
+// 				console.log("Pic name lookup Ajax failed");
+// 			}
+// 		},
+// 		error: function (jqXHR, status, errorThrown)
+// 	    {
+// 	    	$('.status').html('there was an error ' + errorThrown + ' with status ' + textStatus);
+// 	    }
+// 	});
+// }
+
 function lookupTeamData(){
 	$('.status').html('Looking for team\'s data...');
 	var postData = 'team='+$('#team').val();
@@ -54,7 +109,7 @@ function lookupTeamData(){
 				$('#pit_comments').val(data['pit_comments']);
 				$('#hopper_size').val(data['hopper_size']);
 				$('#language').val(data['language']);
-
+				$('#open_source').prop('checked',!!+data['open_source']);
 				$('#manip_high').prop('checked',!!+data['manip_high']);
 				$('#manip_low').prop('checked',!!+data['manip_low']);
 				$('#manip_gear').prop('checked',!!+data['manip_gear']);
@@ -88,6 +143,40 @@ function lookupTeamData(){
 			}
 			else{   
 			    $('.status').html("No existing data found for team "+$('#team').val());
+	  	     	//reset form data for a new entry
+		     	$('#language').val("");
+		     	$('#drivetype').val("");
+		     	$('#height').val("");
+		     	$('#orient').val("");
+		     	$('#drivetype').val("");
+		     	$('#transmission').val("");
+
+		     	$('#open_source').prop('checked', false);
+		     	$('#manip_high').prop('checked', false);
+		     	$('#manip_low').prop('checked', false);
+		     	$('#manip_gear').prop('checked', false);
+		     	$('#gear_human_assist').prop('checked', false);
+		     	$('#gear_automatic_release').prop('checked', false);
+		     	$('#floor_gear').prop('checked', false);
+		     	$('#manip_hopper').prop('checked', false);
+		     	$('#manip_high').prop('checked', false);
+		     	$('#manip_climb').prop('checked', false);
+		     	$('#manip_pickup').prop('checked', false);
+		     	$('#pitscout_auto_baseline').prop('checked', false);
+		     	$('#pitscout_auto_high').prop('checked', false);
+		     	$('#pitscout_auto_low').prop('checked', false);
+		     	$('#pitscout_auto_gear').prop('checked', false);
+		     	$('#start_middle').prop('checked', false);
+		     	$('#start_boiler').prop('checked', false);
+		     	$('#start_far').prop('checked', false);
+		     	$('#start_left').prop('checked', false);
+		     	$('#start_right').prop('checked', false);
+		     	$('#gear_middle').prop('checked', false);
+		     	$('#gear_boiler').prop('checked', false);
+		     	$('#gear_far').prop('checked', false);
+		     	$('#gear_left').prop('checked', false);
+		     	$('#gear_right').prop('checked', false);
+
 			}
 	     	//update status message with results of submission
 	     	//$('.status').html(data);
@@ -134,7 +223,8 @@ function ajaxInsert(){
 	var weight = $("#weight").val();
 	var build_appearance = $("#build_appearance").val();
 	var wiring_appearance = $("#wiring_appearance").val();
-	var language = $("#language").val();
+	var language = $("#language").val(); 
+	var open_source = parseInt(document.getElementById('open_source').checked | 0);
 	var pit_comments = $('#pit_comments').val();
 	var manip_high = parseInt(document.getElementById('manip_high').checked | 0);
 	var manip_low = parseInt(document.getElementById('manip_low').checked | 0);
@@ -187,6 +277,7 @@ function ajaxInsert(){
 		'&manip_climb='+manip_climb+
 		'&manip_pickup='+manip_pickup+
 		'&language='+language+
+		'&open_source='+open_source+
 		'&pitscout_auto_baseline='+pitscout_auto_baseline+
 		'&pitscout_auto_high='+pitscout_auto_high+
 		'&pitscout_auto_low='+pitscout_auto_low+
@@ -210,33 +301,6 @@ function ajaxInsert(){
 	    data : postData,
 	    success: function(data,status, xhr)
 	    {
-	     	//reset form data for a new entry
-	     	$('#language').val("");
-
-	     	$('#manip_high').prop('checked', false);
-	     	$('#manip_low').prop('checked', false);
-	     	$('#manip_gear').prop('checked', false);
-	     	$('#gear_human_assist').prop('checked', false);
-	     	$('#gear_automatic_release').prop('checked', false);
-	     	$('#floor_gear').prop('checked', false);
-	     	$('#manip_hopper').prop('checked', false);
-	     	$('#manip_high').prop('checked', false);
-	     	$('#manip_climb').prop('checked', false);
-	     	$('#manip_pickup').prop('checked', false);
-	     	$('#pitscout_auto_baseline').prop('checked', false);
-	     	$('#pitscout_auto_high').prop('checked', false);
-	     	$('#pitscout_auto_low').prop('checked', false);
-	     	$('#pitscout_auto_gear').prop('checked', false);
-	     	$('#start_middle').prop('checked', false);
-	     	$('#start_boiler').prop('checked', false);
-	     	$('#start_far').prop('checked', false);
-	     	$('#start_left').prop('checked', false);
-	     	$('#start_right').prop('checked', false);
-	     	$('#gear_middle').prop('checked', false);
-	     	$('#gear_boiler').prop('checked', false);
-	     	$('#gear_far').prop('checked', false);
-	     	$('#gear_left').prop('checked', false);
-	     	$('#gear_right').prop('checked', false);
 
 	     	//update status message with results of submission
 	     	$('.status').html(data);
