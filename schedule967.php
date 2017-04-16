@@ -40,8 +40,8 @@
 					$blue3 = substr($s['alliances']['blue']['teams'][2],3);
 					$teams = array($red1, $red2, $red3, $blue1, $blue2, $blue3);
 					if (in_array('967',$teams)){
-						echo "<tr><td>$matchnum</td><td class='w3-theme-l2'>$red1</td><td class='w3-theme-l2'>$red2</td><td class='w3-theme-l2 right'>$red3</td>";
-						echo "<td class='b'>$blue1</td><td class='b'>$blue2</td><td class='b'>$blue3</td></tr>\n";
+						echo "<tr><td>$matchnum</td><td class='w3-theme-l2'><a href=\"report.php?team=$red1\">$red1</a></td><td class='w3-theme-l2'><a href=\"report.php?team=$red2\">$red2</a></td><td class='w3-theme-l2 right'><a href=\"report.php?team=$red3\">$red3</a></td>";
+					echo "<td class='b'><a href=\"report.php?team=$blue1\">$blue1</a></td><td class='b'><a href=\"report.php?team=$blue2\">$blue2</a></td><td class='b'><a href=\"report.php?team=$blue3\">$blue3</a></td></tr>\n";
 					}
 				}
 			}

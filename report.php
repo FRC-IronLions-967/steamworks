@@ -9,14 +9,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="teamData.js"></script>
   <script src="report.js"></script>
+  <style type="text/css">
+    td, th{
+      text-align:center;
+      padding-left:3px;
+      padding-right:3px;
+    }
+  </style>
 </head>
-
 <body class="w3-theme-d3">
 <ul class="w3-navbar w3-theme-l3 w3-round-xxlarge w3-border-black">
+  <li><a href="index.html">Match Scouting</a></li>
   <li><a href="pitscouting.html">Pit Scouting</a></li>
   <li><a href="schedule.php">Schedule</a></li>
 </ul>
-
+<div id="linknum" style="display:none;"><?php echo $_GET['team']; ?></div>
 <div class="w3-panel w3-theme-l3 w3-padding-large w3-round-xxlarge w3-border w3-border-black w3-text-white">
   <p class="status">Status info will be displayed here.</p>
   <label for="team">Team Number</label><br>
@@ -42,19 +49,25 @@
     <span id="driveMotors"></span>
     <span id="speed"></span>
     <br>
-    <strong>Floor Gear Pickup: </strong><span id="floor_gear"></span><br>
-    <strong>Gear Release: </strong><span id="gear_release">gear_release</span>
+    <strong>Floor Gear Pickup: </strong><span id="floor_gear">?</span><br>
+    <strong>Gear Release: </strong><span id="gear_release">?</span><br>
+    <strong>Climber: </strong><span id="climber">?</span>
   </p>
   
   <p>
     <strong>Matches Played: </strong><span id="numberOfMatches">?</span><br>
-    <strong>Auto Gear:</strong> <span id="auto_pct"></span><br>
+    <strong>Auto Gears:</strong> <span id="auto_pct"></span><br>
     <strong>Min/Avg/Max Gears:</strong> 
     <span id="min_gears">?</span> / <span id="avg_gears">?</span> / <span id="max_gears">?</span><br>
-    <strong>Climb:</strong> <span id="climb_pct"></span><br>
-
-
+    <strong>Auto Fuel Avg:</strong> <span id="auto_fuel"></span><br>
+    <strong>Tele Fuel Avg:</strong> <span id="tele_fuel"></span><br>
+    <strong>Climbs:</strong> <span id="climb_pct"></span><br>
+    <strong>Foul Pts Avg:</strong> <span id="fouls"></span><br>
   </p>
+
+  <div id="mtable">Match Info Table</div>
+
+  <div id="mcomments">Match Comments Table</div>
 
 </div>
 </body>

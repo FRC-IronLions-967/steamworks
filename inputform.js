@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	$('#event_info').html(eventData.key.substring(0,4)+" "+eventData.name);
-	updateTeams(scheduleData, $('#matchnum').val())
+	updateTeams(scheduleData, $('#matchnum').val());
 	updateNickname(teamData, $('#team').val());
 
 	$("#submit").click(
@@ -9,11 +9,16 @@ $(document).ready(function(){
 			if (validateForm()){
 				ajaxInsert();
 			} else {
-				$('.status').html('Form data not filled out correctly.');
+				$('.status').html('Form data incomplete - needs match number, team, and scout name.');
 				//update status message to describe invalid form submission
 			}
 		}
 	); //close submit click function
+	$('#teamRefresh').click(
+			function(){
+				updateTeams(scheduleData, $('#matchnum').val());
+			}
+		)
 	$("#matchnum").change(
 		function(){
 			updateTeams(scheduleData, $('#matchnum').val())
@@ -31,10 +36,11 @@ $(document).ready(function(){
 function validateForm(){
 	var matchnum = $('#matchnum').val();
 	var team = $('#team').val();
+	var scout_name = $('#scout_name').val();
 	var validated = true;
-	if(matchnum==null||isNaN(matchnum)||team==null||team==0||team==""){
+	if(matchnum==null||isNaN(matchnum)||team==null||team==0||team==""||scout_name==""||scout_name==null){
 		validated = false;
-		$('.status').html('Fill out form fields.');
+		$('.status').html('Fill out match number, team, and scout name.');
 	}
 	//validate HTML form data
 	//if form input is invalid, validated = false

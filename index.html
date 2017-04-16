@@ -28,12 +28,12 @@
     <li><a href="pitscouting.html">Pit Scouting</a></li>
     <li><a href="schedule.php">Schedule</a></li>
     <li><a href="teams.php">Team List</a></li>  
-    <li><a href="admin.html">Admin</a></li>  
-    <li><a href="csv.php">CSV Download</a></li>
-    <li><a href="pitcsv.php">Pit CSV Download</a></li>
-    <li><a href="uploadPic.html">Upload Team Photos</a></li>
-    <li><a href="teamReport.html">Team Reports</a></li>
-    <li><a href="intro.html">Intro</a></li>
+    <!-- <li><a href="admin.html">Admin</a></li>   -->
+    <li><a href="csv.php">Match CSV</a></li>
+    <li><a href="pitcsv.php">Pit CSV</a></li>
+    <li><a href="uploadPic.html">Upload Photos</a></li>
+    <li><a href="teamReport.html">Report</a></li>
+    <!-- <li><a href="intro.html">Intro</a></li> -->
   </ul>
 
   <!-- Match Selection -->
@@ -46,6 +46,7 @@
     <!-- Team Selection -->
     <div class = "dropdown">
       <h2>Team Number:</h2>
+      <button id="teamRefresh">Refresh Teams</button><br><br>
       <select id="team" name="team">
         <option value=100>100</option>
         <option value=200>200</option>
@@ -55,7 +56,7 @@
         <option value=600>600</option>
       </select><span id="nickname" style="margin-left: 10px;">team nickname</span>   
     </div>
-
+    <br>
     <label for="practice">Practice?</label>
     <input type="checkbox" name="practice" id="practice"><br>
   
@@ -68,6 +69,12 @@
     <div class="title"><h1>Autonomous</h1></div>  
     
     <div>
+      <label for="auto_pos">Position</label>
+      <select id="auto_pos" name="auto_pos">
+          <option value="boil">Boiler Side</option>
+          <option value="mid">Middle</option>
+          <option value="load">Loading Side</option>
+      </select><br><br>
       <label for="baseline">Baseline</label>
       <input type="checkbox" name="baseline" id="baseline">
     </div>
@@ -123,16 +130,7 @@
     <div>    
         <label for="auto_incap">Incapacitated (Auto)</label>
         <input type="checkbox" name="auto_incap" id="auto_incap">
-    </div>
-    <br>
-        
-    <label for="auto_pos">Position</label>
-    <select id="auto_pos" name="auto_pos">
-        <option value="boil">Boiler Side</option>
-        <option value="mid">Middle</option>
-        <option value="far">Far Side</option>
-    </select>
-            
+    </div>            
 </div>
 
   <!-- TeleOp -->
@@ -140,6 +138,24 @@
             
     <div class="title"><h2>TeleOp</h2></div>
     
+      Gears Made:<br>
+      <button id="minusFiveGearsMade" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
+      <button id="minusOneGearsMade" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-1</button>
+
+      <input type="number" name="tele_gear_made" value="0" id="tele_gear_made" min="0" max = "250">
+
+      <button id="plusOneGearsMade" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+1</button>
+      <button id="plusFiveGearsMade" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
+      <br>
+      Gears Missed:<br>
+      <button id="minusFiveGearsMissed" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
+      <button id="minusOneGearsMissed" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-1</button>
+
+      <input type="number" name="tele_gear_miss" value="0" id="tele_gear_miss" min="0" max = "250">
+
+      <button id="plusOneGearsMissed" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+1</button>
+      <button id="plusFiveGearsMissed" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
+      <br>
        
       Cycles:<br>
       <button id="minusFiveCycles" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
@@ -190,24 +206,7 @@
       <button id="plusOnetelelowmiss" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+1</button>
       <button id="plusFivetelelowmiss" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
       <br>
-      Gears Made:<br>
-      <button id="minusFiveGearsMade" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
-      <button id="minusOneGearsMade" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-1</button>
-
-      <input type="number" name="tele_gear_made" value="0" id="tele_gear_made" min="0" max = "250">
-
-      <button id="plusOneGearsMade" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+1</button>
-      <button id="plusFiveGearsMade" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
-      <br>
-      Gears Missed:<br>
-      <button id="minusFiveGearsMissed" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
-      <button id="minusOneGearsMissed" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-1</button>
-
-      <input type="number" name="tele_gear_miss" value="0" id="tele_gear_miss" min="0" max = "250">
-
-      <button id="plusOneGearsMissed" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+1</button>
-      <button id="plusFiveGearsMissed" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">+5</button>
-      <br>
+      
     
       Hoppers Dumped:<br>
       <button id="minusFiveHoppers" class="w3-btn w3-theme-l2 w3-border w3-border-black w3-round-large">-5</button>
@@ -265,7 +264,7 @@
      
          <!--Comments:<br>
           <input type="text" name="comments" value="" id="comments">-->
-          <textarea placeholder="Insert Comments Here" name="comments" value="" id="comments"></textarea>
+          <textarea placeholder="Insert Comments Here" name="comments" value="" id="comments" style="width:300px;height:150px;"></textarea>
 
   </div>
 

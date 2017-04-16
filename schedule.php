@@ -40,8 +40,8 @@
 					$blue1 = substr($s['alliances']['blue']['teams'][0],3);
 					$blue2 = substr($s['alliances']['blue']['teams'][1],3);
 					$blue3 = substr($s['alliances']['blue']['teams'][2],3);
-					echo "<tr><td>$matchnum</td><td class='w3-theme-l2'>$red1</td><td class='w3-theme-l2'>$red2</td><td class='w3-theme-l2 right'>$red3</td>";
-					echo "<td class='b'>$blue1</td><td class='b'>$blue2</td><td class='b'>$blue3</td></tr>\n";
+					echo "<tr><td>$matchnum</td><td class='w3-theme-l2'><a href=\"report.php?team=$red1\">$red1</a></td><td class='w3-theme-l2'><a href=\"report.php?team=$red2\">$red2</a></td><td class='w3-theme-l2 right'><a href=\"report.php?team=$red3\">$red3</a></td>";
+					echo "<td class='b'><a href=\"report.php?team=$blue1\">$blue1</a></td><td class='b'><a href=\"report.php?team=$blue2\">$blue2</a></td><td class='b'><a href=\"report.php?team=$blue3\">$blue3</a></td></tr>\n";
 				}
 			}
 			// $blue1 = $sched[36]['alliances']['blue']['teams'][0];

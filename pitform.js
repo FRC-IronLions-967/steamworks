@@ -150,6 +150,7 @@ function lookupTeamData(){
 		     	$('#orient').val("");
 		     	$('#drivetype').val("");
 		     	$('#transmission').val("");
+		     	$('#hopper_size').val(0);
 
 		     	$('#open_source').prop('checked', false);
 		     	$('#manip_high').prop('checked', false);

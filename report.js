@@ -8,22 +8,11 @@ $(document).ready(function(){
 		}
 		//run ajax method to update fields if data exists
 	); //close team change
-	$("#team").val(967);
+	$("#team").val($('#linknum').html());
 	lookupTeamData();
 	lookupMatchData();
 	$("#robot_picture").attr("src", "pics/"+$("#team").val()+".jpg");
 }); //close document ready 
-
-function itemString(d, unit="", comma=","){
-	//make comma = "" when calling for the last item in the list
-	if(d == null || d.length == 0){
-		return "";
-	} else {
-		return d+unit+comma;
-	}
-}
-
-
 
 function lookupTeamData(){
 	$('.status').html('Looking for team\'s data...');
@@ -61,6 +50,11 @@ function lookupTeamData(){
 					$('#floor_gear').html('Yes');
 				} else if (data['floor_gear']==0){
 					$('#floor_gear').html('No');
+				}
+				if(data['manip_climb']==1){
+					$('#climber').html('Yes');
+				} else if (data['manip_climb']==0){
+					$('#climber').html('No');
 				}
 
 				// $('#floor_gear').prop('checked',!!+data['floor_gear']);
@@ -130,11 +124,17 @@ function lookupMatchData(){
         	// console.log(xhr.responseText);
         	var auto_gears = 0;
         	var auto_misses = 0;
+        	var aFuelTot = 0;
+        	var tFuelTot = 0;
         	var gears = [];
         	var gtot = 0;
         	var climbs = 0;
         	var climb_misses = 0;
+        	var foul_points = 0;
+        	var auto_attempts = 0;
             matches = JSON.parse(xhr.responseText);
+
+            //First loop is for calculating averages/totals
             for (i=0;i<parseInt(matches.length);i++){
             	//maths
             	if(matches[i]["auto_gear_made"]==1){
@@ -150,18 +150,119 @@ function lookupMatchData(){
             	}
             	gears.push(parseInt(matches[i]["tele_gear_made"]));
             	gtot += parseInt(matches[i]["tele_gear_made"]);
+            	aFuelTot += parseInt(matches[i]["auto_high_made"]*1+matches[i]["auto_low_made"]*.334);
+            	tFuelTot += parseInt(matches[i]["tele_high_made"]*0.334+matches[i]["tele_low_made"]*.112);
             	auto_attempts = auto_gears+auto_misses;
+            	foul_points += parseInt(matches[i]["nontechnical"]*5+parseInt(matches[i]["technical"]*25));
             }
-        //update HTML elements
-        $('#numberOfMatches').html(matches.length);
-        $('#auto_pct').html(auto_gears+" out of "+auto_attempts);
-		var gmin = Math.min.apply(null,gears);
-		var gmax = Math.max.apply(null,gears);
-		var gavg = Math.round(10*gtot/matches.length)/10;
-		$('#min_gears').html(gmin);
-        $('#max_gears').html(gmax);
-        $('#avg_gears').html(gavg);
-        $('#climb_pct').html(climbs+" out of "+(climbs+climb_misses));
+	        //update HTML elements
+	        $('#numberOfMatches').html(matches.length);
+	        $('#auto_pct').html(auto_gears+" out of "+auto_attempts);
+			var gmin = Math.min.apply(null,gears);
+			var gmax = Math.max.apply(null,gears);
+			var gavg = Math.round(10*gtot/matches.length)/10;
+			var aFuelAvg = Math.round(10*aFuelTot/matches.length)/10;
+			var tFuelAvg = Math.round(10*tFuelTot/matches.length)/10;
+			var favg = Math.round(10*foul_points/matches.length)/10;
+			$('#min_gears').html(gmin);
+	        $('#max_gears').html(gmax);
+	        $('#avg_gears').html(gavg);
+	        // console.log(aFuelAvg + " " + tFuelAvg)
+	        $('#auto_fuel').html(aFuelAvg);
+	        $('#tele_fuel').html(tFuelAvg);
+	        $('#climb_pct').html(climbs+" out of "+(climbs+climb_misses));
+	        $('#fouls').html(favg);
+
+	        //Loop again to get individual match listing
+	        var t = "";
+	        var auto = "";
+	        var gears = "";
+	        var climb = "";
+	        var maFuel = 0;
+	        var mtfuel = 0;
+	        var other = "";
+	        t += "<table><tr><th>M#</th><th>aG</th><th>tG</th><th>aF</th><th>tF</th><th>Cl</th><th>Foul</th><th>Other</th></tr>\n";
+	        for (i=0;i<parseInt(matches.length);i++){
+	        	other="";
+	        	// console.log(matches[i]);
+
+	        	if(matches[i]["auto_gear_made"]==1){
+	        		auto="&#x2714";
+	        	} else if(matches[i]["auto_gear_miss"]==1){
+	        		auto="&#x2718";
+	        	} else{
+	        		auto = "-";
+	        	}
+	        	var gear_atts = (parseInt(matches[i]["tele_gear_miss"])+parseInt(matches[i]["tele_gear_made"]));
+	        	if(gear_atts==0){
+	        		gears="-";
+	        	} else {
+	        	gears = matches[i]["tele_gear_made"]+"/"+gear_atts;
+	        	}
+
+	        	maFuel = parseInt(matches[i]["auto_high_made"]*1+matches[i]["auto_low_made"]*.334);
+            	mtFuel = parseInt(matches[i]["tele_high_made"]*0.334+matches[i]["tele_low_made"]*.112);
+            	if(maFuel == 0){
+	            	if(matches[i]["auto_high_miss"]!=0){
+	            		maFuel = "0%";
+	            	} else {
+	            		maFuel = "-";
+	            	}            		
+            	}
+            	if(mtFuel == 0){
+	            	if(matches[i]["tele_high_miss"]!=0){
+	            		mtFuel = "0%";
+	            	} else {
+	            		mtFuel = "-";
+	            	}            		
+            	}
+
+	        	if(matches[i]["climb_made"]==1){
+	        		climb="&#x2714";
+	        	} else if(matches[i]["climb_miss"]==1){
+	        		climb="&#x2718";
+	        	} else{
+	        		climb = "-";
+	        	}
+
+				var mFoulPts = parseInt(matches[i]["nontechnical"]*5+parseInt(matches[i]["technical"]*25));
+
+				if(matches[i]["defense"]==1){
+					other+= "def ";
+				}
+				if(matches[i]["auto_incap"]==1 || matches[i]["tele_incap"]==1){
+					other+= "incap ";
+				}
+				// if(matches[i]["baseline"]==0){
+				// 	other+= "noBaseline";
+				// }
+
+	        	t+= "<tr><td>"+matches[i]['matchnum']+"</td>";
+	      		t+= "<td>"+auto+"</td>";
+	      		t+= "<td>"+gears+"</td>";
+	      		t+= "<td>"+maFuel+"</td>";
+	      		t+= "<td>"+mtFuel+"</td>";
+	      		t+= "<td>"+climb+"</td>";
+	      		t+= "<td>"+zd(mFoulPts)+"</td>";
+	      		t+= "<td>"+other+"</td>";
+	      		t+= "</tr>\n";
+	        }
+	        t += "</table>";
+	        $('#mtable').html(t);
+
+	        //One more loop to list the match comments
+	        var ct = "";
+	        ct += "<table><tr><th>M#</th><th>Comments</th></tr>\n";
+	        for (i=0;i<parseInt(matches.length);i++){
+	        	if(matches[i]["comments"].length>0){
+		        	ct+= "<tr>";
+		        	ct+= "<td>"+matches[i]["matchnum"]+"</td>";
+		        	ct+= "<td style='text-align:left;'>"+matches[i]["comments"]+" -"+matches[i]["scout_name"]+"</td>";
+		        	ct+= "</tr>"	
+	        	}
+	        }
+	        ct+="</table>";
+	        $('#mcomments').html(ct);
         }
         else {
             console.log(xhr.status);
@@ -170,6 +271,23 @@ function lookupMatchData(){
     xhr.send();
 }
 
+function zd(tot){
+	//zd stands for zero dash
+	if(tot==0){
+		return "-";
+	} else{
+		return tot;
+	}
+}
+
+function itemString(d, unit="", comma=","){
+	//make comma = "" when calling for the last item in the list
+	if(d == null || d.length == 0){
+		return "";
+	} else {
+		return d+unit+comma;
+	}
+}
 
 function updateTeams(arr){
 	var teamList = [];
